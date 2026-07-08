@@ -113,7 +113,7 @@ export default function Worlds() {
             </button>
 
             <span className="mt-2 text-lg font-bold tracking-wide text-[#1201A4]">
-              GO!
+              GO
             </span>
 
           </div>
@@ -195,14 +195,95 @@ export default function Worlds() {
             </button>
 
             <span className="mt-2 text-lg font-bold tracking-wide text-[#1201A4]">
-              GO!
+              GO
             </span>
 
           </div>
 
         </article>
 
+{/* ===== More MarisMathics ===== */}
+
+<article
+  className="
+    w-[390px]
+    rounded-[36px]
+   bg-[linear-gradient(to_bottom,#3B4ED3_0%,#4EABF3_100%)]
+    p-7
+    shadow-[0_18px_40px_rgba(0,0,0,0.18)]
+    transition-all
+    duration-300
+    hover:shadow-[0_0_45px_rgba(25,224,248,0.45)]
+  "
+>
+
+  {/* Titel */}
+
+  <h2 className="text-center text-[2.5rem] font-semibold leading-tight text-white">
+    More
+    <br />
+    MarisMathics
+  </h2>
+
+  {/* Afbeelding */}
+
+  <div className="mt-6 px-4">
+    <div className="overflow-hidden rounded-[28px] shadow-xl">
+      <img
+        src="/worlds/more/Mariska.png"
+        alt="More MarisMathics"
+        className="w-full rounded-[28px]"
+      />
+    </div>
+  </div>
+
+  {/* Tekst */}
+
+  <p className="mt-6 text-center text-lg font-semibold text-white">
+    Want more MarisMathics? ⚡
+  </p>
+
+  <p className="mt-2 text-center text-[16px] leading-7 text-white/90">
+    Meet Mariska
+    <br />
+    and explore the world
+    <br />
+    behind MarisMathics.
+  </p>
+
+  {/* GO */}
+
+  <div className="mt-6 flex flex-col items-center">
+
+    <button
+      className="
+        group
+        transition-all
+        duration-300
+        hover:scale-110
+      "
+    >
+      <img
+        src="/branding/compass-enter.svg"
+        alt="Enter More MarisMathics"
+        className="
+          h-20
+          w-20
+          transition-all
+          duration-300
+          group-hover:drop-shadow-[0_0_22px_rgba(24,224,248,0.9)]
+        "
+      />
+    </button>
+
+    <span className="mt-2 text-lg font-bold tracking-wide text-[#1201A4]">
+      GO
+    </span>
+
+  </div>
+
+</article>
       </div>
     </section>
-  );
+    );
 }

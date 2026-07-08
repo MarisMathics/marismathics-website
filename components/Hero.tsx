@@ -11,7 +11,7 @@ export default function Hero() {
           <img
             src="/branding/logo_transparant.png"
             alt="MarisMathics"
-            className="relative w-[600px] max-w-full"
+            className="relative w-[550px] max-w-full"
           />
 
         </div>
