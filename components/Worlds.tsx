@@ -1,6 +1,34 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+const exploreImages = [
+  "/worlds/explore/01.png",
+  "/worlds/explore/02.png",
+  "/worlds/explore/03.png",
+  "/worlds/explore/04.png",
+  "/worlds/explore/05.png",
+];
+
+const FIRST_IMAGE_DURATION = 5000;
+const IMAGE_DURATION = 3500;
+
 export default function Worlds() {
+ const [currentImage, setCurrentImage] = useState(0);
+
+ useEffect(() => {
+  const delay =
+    currentImage === 0 ? FIRST_IMAGE_DURATION : IMAGE_DURATION;
+
+  const timeout = setTimeout(() => {
+    setCurrentImage((prev) => (prev + 1) % exploreImages.length);
+  }, delay);
+
+  return () => clearTimeout(timeout);
+}, [currentImage]);
+
   return (
-     <section className="mx-auto mt-4 mb-16 max-w-7xl px-8">
+    <section className="mx-auto mt-4 mb-16 max-w-7xl px-8">
       <div className="grid grid-cols-3 gap-12">
 
         {/* ===== BEAT THE LIGHTNING ===== */}
@@ -48,7 +76,7 @@ export default function Worlds() {
           {/* Tekst */}
 
           <p className="mt-6 text-center text-lg font-semibold text-white">
-            Can you beat the lightning? ⚡
+            Can you beat the lightning?⚡
           </p>
 
           <p className="mt-2 text-center text-[16px] leading-7 text-white/90">
@@ -74,6 +102,88 @@ export default function Worlds() {
               <img
                 src="/branding/compass-enter.svg"
                 alt="Enter BEAT THE LIGHTNING"
+                className="
+                  h-20
+                  w-20
+                  transition-all
+                  duration-300
+                  group-hover:drop-shadow-[0_0_22px_rgba(24,224,248,0.9)]
+                "
+              />
+            </button>
+
+            <span className="mt-2 text-lg font-bold tracking-wide text-[#1201A4]">
+              GO!
+            </span>
+
+          </div>
+
+        </article>
+
+        {/* ===== EXPLORE MATH ===== */}
+
+        <article
+          className="
+            w-[390px]
+            rounded-[36px]
+            bg-[radial-gradient(circle_at_center,#1376FD_18%,#65E7F6_100%)]
+            p-7
+            shadow-[0_18px_40px_rgba(0,0,0,0.18)]
+            transition-all
+            duration-300
+            hover:shadow-[0_0_45px_rgba(25,224,248,0.45)]
+          "
+        >
+
+          {/* Titel */}
+
+          <h2 className="text-center text-[2.5rem] font-semibold leading-tight text-white">
+            Explore
+            <br />
+            Math
+          </h2>
+
+          {/* Carrousel */}
+
+<div className="mt-6 px-4">
+  <div className="overflow-hidden rounded-[28px] shadow-xl">
+    <img
+      src={exploreImages[currentImage]}
+      alt="Explore Math"
+      className="w-full rounded-[28px]"
+    />
+  </div>
+</div>
+
+          {/* Tekst */}
+
+          <p className="mt-6 text-center text-lg font-semibold text-white">
+            Ready to explore math?⚡
+          </p>
+
+          <p className="mt-2 text-center text-[16px] leading-7 text-white/90">
+            Discover math through
+            <br />
+            clear explanations, surprising insights
+            <br />
+            and moments that make you smile.
+          </p>
+
+          {/* GO */}
+
+          <div className="mt-6 flex flex-col items-center">
+
+            <button
+              className="
+                group
+                transition-all
+                duration-300
+                hover:scale-110
+              "
+            >
+              <img
+                src="/branding/compass-enter.svg"
+                alt="Enter Explore Math"
                 className="
                   h-20
                   w-20
