@@ -28,17 +28,17 @@ export default function Worlds() {
 }, [currentImage]);
 
   return (
-    <section className="mx-auto mt-4 mb-16 max-w-7xl px-8">
+    <section className="mx-auto mt-7 mb-16 max-w-7xl px-8">
       <div className="grid grid-cols-3 gap-12">
 
         {/* ===== BEAT THE LIGHTNING ===== */}
 
         <article
           className="
-            w-[390px]
+            w-[350px]
             rounded-[36px]
             bg-[radial-gradient(circle_at_center,#19E0F8_15%,#1376FD_100%)]
-            p-7
+            p-6
             shadow-[0_18px_40px_rgba(0,0,0,0.18)]
             transition-all
             duration-300
@@ -48,7 +48,7 @@ export default function Worlds() {
 
           {/* Titel */}
 
-          <h2 className="text-center text-[2.5rem] font-semibold leading-tight text-white">
+          <h2 className="text-center text-[1.7rem] leading-tight text-slate-50">
             BEAT THE
             <br />
             LIGHTNING
@@ -56,7 +56,7 @@ export default function Worlds() {
 
           {/* Video */}
 
-          <div className="mt-6 px-4">
+          <div className="mt-4 px-6">
             <div className="overflow-hidden rounded-[28px] shadow-xl">
               <video
                 autoPlay
@@ -73,23 +73,9 @@ export default function Worlds() {
             </div>
           </div>
 
-          {/* Tekst */}
-
-          <p className="mt-6 text-center text-lg font-semibold text-white">
-            Can you beat the lightning?⚡
-          </p>
-
-          <p className="mt-2 text-center text-[16px] leading-7 text-white/90">
-            Solve each challenge
-            <br />
-            before the lightning strikes
-            <br />
-            and sharpen your math skills.
-          </p>
-
           {/* GO */}
 
-          <div className="mt-6 flex flex-col items-center">
+          <div className="mt-2 flex flex-col items-center">
 
             <button
               className="
@@ -103,8 +89,8 @@ export default function Worlds() {
                 src="/branding/compass-enter.svg"
                 alt="Enter BEAT THE LIGHTNING"
                 className="
-                  h-20
-                  w-20
+                  h-14
+                  w-14
                   transition-all
                   duration-300
                   group-hover:drop-shadow-[0_0_22px_rgba(24,224,248,0.9)]
@@ -112,11 +98,24 @@ export default function Worlds() {
               />
             </button>
 
-            <span className="mt-2 text-lg font-bold tracking-wide text-[#1201A4]">
+            <span className="mt-1 text-base font-bold tracking-wide text-[#1201A4]">
               GO
             </span>
 
           </div>
+
+          {/* Tekst */}
+
+          <p className="mt-3 text-center text-lg font-semibold text-white">
+            Can you beat the lightning?⚡
+          </p>
+
+          <p className="mt-2 text-center text-[16px] leading-6 text-white/90">
+            Solve each challenge
+            <br />
+            before the lightning strikes.
+            <br />
+          </p>
 
         </article>
 
@@ -124,10 +123,10 @@ export default function Worlds() {
 
         <article
           className="
-            w-[390px]
+            w-[350px]
             rounded-[36px]
             bg-[radial-gradient(circle_at_center,#1376FD_18%,#65E7F6_100%)]
-            p-7
+            p-6
             shadow-[0_18px_40px_rgba(0,0,0,0.18)]
             transition-all
             duration-300
@@ -137,7 +136,7 @@ export default function Worlds() {
 
           {/* Titel */}
 
-          <h2 className="text-center text-[2.5rem] font-semibold leading-tight text-white">
+          <h2 className="text-center text-[1.7rem] leading-tight text-slate-50">
             Explore
             <br />
             Math
@@ -145,7 +144,7 @@ export default function Worlds() {
 
           {/* Carrousel */}
 
-<div className="mt-6 px-4">
+<div className="mt-4 px-6">
   <div className="overflow-hidden rounded-[28px] shadow-xl">
     <img
       src={exploreImages[currentImage]}
@@ -155,23 +154,9 @@ export default function Worlds() {
   </div>
 </div>
 
-          {/* Tekst */}
-
-          <p className="mt-6 text-center text-lg font-semibold text-white">
-            Ready to explore math?⚡
-          </p>
-
-          <p className="mt-2 text-center text-[16px] leading-7 text-white/90">
-            Discover math through
-            <br />
-            clear explanations, surprising insights
-            <br />
-            and moments that make you smile.
-          </p>
-
           {/* GO */}
 
-          <div className="mt-6 flex flex-col items-center">
+          <div className="mt-2 flex flex-col items-center">
 
             <button
               className="
@@ -185,8 +170,8 @@ export default function Worlds() {
                 src="/branding/compass-enter.svg"
                 alt="Enter Explore Math"
                 className="
-                  h-20
-                  w-20
+                  h-14
+                  w-14
                   transition-all
                   duration-300
                   group-hover:drop-shadow-[0_0_22px_rgba(24,224,248,0.9)]
@@ -194,11 +179,23 @@ export default function Worlds() {
               />
             </button>
 
-            <span className="mt-2 text-lg font-bold tracking-wide text-[#1201A4]">
+            <span className="mt-1 text-base font-bold tracking-wide text-[#1201A4]">
               GO
             </span>
 
           </div>
+
+           {/* Tekst */}
+
+          <p className="mt-3 text-center text-lg font-semibold text-white">
+            Ready to explore math?⚡
+          </p>
+
+          <p className="mt-2 text-center text-[16px] leading-6 text-white/90">
+            Discover clear explanations
+            <br />
+            and moments that make you smile.
+          </p>
 
         </article>
 
@@ -206,10 +203,10 @@ export default function Worlds() {
 
 <article
   className="
-    w-[390px]
+    w-[350px]
     rounded-[36px]
    bg-[linear-gradient(to_bottom,#3B4ED3_0%,#4EABF3_100%)]
-    p-7
+    p-6
     shadow-[0_18px_40px_rgba(0,0,0,0.18)]
     transition-all
     duration-300
@@ -219,7 +216,7 @@ export default function Worlds() {
 
   {/* Titel */}
 
-  <h2 className="text-center text-[2.5rem] font-semibold leading-tight text-white">
+  <h2 className="text-center text-[1.7rem] leading-tight text-slate-50">
     More
     <br />
     MarisMathics
@@ -227,7 +224,7 @@ export default function Worlds() {
 
   {/* Afbeelding */}
 
-  <div className="mt-6 px-4">
+  <div className="mt-4 px-6">
     <div className="overflow-hidden rounded-[28px] shadow-xl">
       <img
         src="/worlds/more/Mariska.png"
@@ -237,23 +234,9 @@ export default function Worlds() {
     </div>
   </div>
 
-  {/* Tekst */}
+    {/* GO */}
 
-  <p className="mt-6 text-center text-lg font-semibold text-white">
-    Want more MarisMathics? ⚡
-  </p>
-
-  <p className="mt-2 text-center text-[16px] leading-7 text-white/90">
-    Meet Mariska
-    <br />
-    and explore the world
-    <br />
-    behind MarisMathics.
-  </p>
-
-  {/* GO */}
-
-  <div className="mt-6 flex flex-col items-center">
+  <div className="mt-2 flex flex-col items-center">
 
     <button
       className="
@@ -267,8 +250,8 @@ export default function Worlds() {
         src="/branding/compass-enter.svg"
         alt="Enter More MarisMathics"
         className="
-          h-20
-          w-20
+          h-14
+          w-14
           transition-all
           duration-300
           group-hover:drop-shadow-[0_0_22px_rgba(24,224,248,0.9)]
@@ -276,11 +259,23 @@ export default function Worlds() {
       />
     </button>
 
-    <span className="mt-2 text-lg font-bold tracking-wide text-[#1201A4]">
+    <span className="mt-1 text-base font-bold tracking-wide text-[#1201A4]">
       GO
     </span>
 
   </div>
+
+{/* Tekst */}
+
+  <p className="mt-3 text-center text-lg font-semibold text-white">
+    Want more MarisMathics? ⚡
+  </p>
+
+  <p className="mt-2 text-center text-[16px] leading-6 text-white/90">
+    Meet Mariska and explore
+    <br />
+     the world behind MarisMathics.
+  </p>
 
 </article>
       </div>
