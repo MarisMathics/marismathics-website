@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Libre_Baskerville } from "next/font/google";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -33,7 +35,11 @@ export default function RootLayout({
       lang="en"
       className={`${montserrat.variable} ${libreBaskerville.variable}`}
     >
-      <body>{children}</body>
+      <body className="flex min-h-screen flex-col">
+        <Navigation />
+        <div className="flex-1">{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -1,13 +1,14 @@
 import WorldCard from "@/components/WorldCard";
 import ExploreCarousel from "@/components/ExploreCarousel";
+import { worldLinks } from "@/lib/site";
 
 /**
  * The three MarisMathics Worlds on the homepage.
  */
 export default function Worlds() {
   return (
-    <section className="mx-auto mt-7 mb-16 max-w-7xl px-8">
-      <div className="grid grid-cols-3 gap-12">
+    <section className="mx-auto mt-7 mb-16 max-w-7xl px-8 md:px-6 xl:px-8">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-5 xl:gap-12">
         {/* ===== BEAT THE LIGHTNING ===== */}
         <WorldCard
           title={
@@ -29,6 +30,7 @@ export default function Worlds() {
               <source src="/worlds/btl/btl-preview.mp4" type="video/mp4" />
             </video>
           }
+          href={worldLinks.btl}
           goLabel="Enter BEAT THE LIGHTNING"
           teaser="Can you beat the lightning?⚡"
           description={
@@ -52,6 +54,7 @@ export default function Worlds() {
           }
           background="bg-[radial-gradient(circle_at_center,#1376FD_18%,#65E7F6_100%)]"
           preview={<ExploreCarousel />}
+          href={worldLinks.explore}
           goLabel="Enter Explore Math"
           teaser="Ready to explore math?⚡"
           description={
@@ -80,6 +83,7 @@ export default function Worlds() {
               className="w-full rounded-[28px]"
             />
           }
+          href={worldLinks.more}
           goLabel="Enter More MarisMathics"
           teaser="Want more MarisMathics? ⚡"
           description={
