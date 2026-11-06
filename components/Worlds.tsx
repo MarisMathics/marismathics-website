@@ -205,7 +205,7 @@ export default function Worlds() {
   className="
     w-[350px]
     rounded-[36px]
-   bg-[linear-gradient(to_bottom,#3B4ED3_0%,#4EABF3_100%)]
+   bg-[linear-gradient(to_bottom,#1376fd_0%,#4EABF3_100%)]
     p-6
     shadow-[0_18px_40px_rgba(0,0,0,0.18)]
     transition-all
