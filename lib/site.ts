@@ -19,6 +19,7 @@ export const navItems: NavItem[] = [
 export const socials = [
   { name: "YouTube", handle: "@MarisMathics", href: "https://www.youtube.com/@MarisMathics" },
   { name: "TikTok", handle: "@marismathics", href: "https://www.tiktok.com/@marismathics" },
+  { name: "Instagram", handle: "@marismathics", href: "https://www.instagram.com/marismathics" },
 ];
 
 export const worldLinks = {
