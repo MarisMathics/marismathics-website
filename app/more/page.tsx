@@ -16,7 +16,11 @@ const h2 =
 /** Small lightning bolt in the brand colors (instead of the yellow emoji) */
 function Bolt() {
   return (
-    <svg viewBox="0 0 12 20" className="mx-0.5 inline-block h-[1em] w-[0.6em] -translate-y-px align-middle" aria-hidden="true">
+    <svg
+      viewBox="0 0 12 20"
+      className="mx-0.5 inline-block h-[1em] w-[0.6em] -translate-y-px align-middle"
+      aria-hidden="true"
+    >
       <path d="M8 0 0 11.5h4.5L3 20l9-12H7.2L8 0z" fill="#1201A4" />
     </svg>
   );
@@ -53,16 +57,16 @@ export default function MorePage() {
             <h2 className={`${h2} text-center`}>Hi, I’m Mariska</h2>
             <div className="mt-4 space-y-4 text-lg leading-8 text-white">
               <p>
-                I’m the “Maris” behind MarisMathics: a math teacher in
-                secondary school in Belgium who loves turning tricky concepts
-                into clear insights, with a few laughs along the way.
+                I’m the “Maris” behind MarisMathics: a math teacher in secondary
+                school in Belgium who loves turning tricky concepts into clear
+                insights, with a few laughs along the way.
               </p>
               <p>
-                I didn’t start out as a teacher. I studied business
-                engineering and spent twelve years managing projects in
-                logistics. But my dream was to stand in front of a classroom.
-                So I earned my teaching degree, and in 2019 I made the switch.
-                Teaching math became my daily work, and I love it.
+                I didn’t start out as a teacher. I studied business engineering
+                and spent twelve years managing projects in logistics. But my
+                dream was to stand in front of a classroom. So I earned my
+                teaching degree, and in 2019 I made the switch. Teaching math
+                became my daily work, and I love it.
               </p>
               <p>
                 What I enjoy most are those{" "}
@@ -76,10 +80,10 @@ export default function MorePage() {
                 where students tend to get stuck, so that’s where I start.
               </p>
               <p>
-                At MarisMathics, I bring math to life with clarity and a
-                healthy dose of fun. Whether you love math… or think numbers
-                are confusing, you’ll find clear explanations, surprising
-                insights and lightning-fast challenges.
+                At MarisMathics, I bring math to life with clarity and a healthy
+                dose of fun. Whether you love math… or think numbers are
+                confusing, you’ll find clear explanations, surprising insights
+                and lightning-fast challenges.
               </p>
             </div>
             <p className="mt-6 text-center text-xl font-bold text-[#1201A4] italic md:text-2xl">
@@ -90,43 +94,54 @@ export default function MorePage() {
       </section>
 
       {/* ===== Made by MarisMathics ===== */}
-      <section className="mx-auto mt-10 max-w-5xl px-4 md:mt-12 md:px-8">
-        <h2 className="mb-5 text-center text-2xl font-bold text-white md:mb-7 md:text-3xl">
-          Made by MarisMathics
-        </h2>
-        <a
-          href={gameLink}
-          className="group mx-auto flex max-w-3xl flex-col items-center gap-5 rounded-[30px] bg-[radial-gradient(circle_at_30%_50%,#19E0F8_0%,#1376FD_70%)] p-6 text-center shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition hover:-translate-y-1 sm:flex-row sm:text-left md:p-7"
-        >
-          <img
-            src="/beat-the-lightning/app-home.jpg"
-            alt="Home screen of the Beat the Lightning game"
-            width={560}
-            height={579}
-            className="w-44 shrink-0 rounded-[18px] shadow-lg md:w-52"
-          />
-          <div>
-            <p className="text-xs font-bold tracking-wide text-[#1201A4] uppercase">
-              Free web game
-            </p>
-            <h3 className="mt-1 text-2xl font-bold text-white">
-              BEAT THE LIGHTNING
-            </h3>
-            <p className="mt-2 text-white">
-              Solve each challenge before the lightning strikes
-            </p>
-            <span className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#1201A4] px-6 py-2.5 font-bold text-white shadow-lg transition group-hover:scale-105">
-              Play the game
-              <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M7 4l6 6-6 6" />
-              </svg>
-            </span>
-          </div>
-        </a>
+      <section className="mx-auto mt-8 max-w-5xl px-4 md:mt-10 md:px-8">
+        <div className="rounded-[30px] border border-white/10 bg-white/[0.06] p-5 pt-6 shadow-[0_18px_40px_rgba(0,0,0,0.18)] md:px-10 md:pt-8 md:pb-10">
+          <h2 className="mb-5 text-center text-2xl font-bold text-white md:mb-7 md:text-3xl">
+            Made by MarisMathics
+          </h2>
+          <a
+            href={gameLink}
+            className="group mx-auto flex max-w-3xl flex-col items-center gap-5 rounded-[24px] bg-[radial-gradient(circle_at_30%_50%,#19E0F8_0%,#1376FD_70%)] p-5 text-center shadow-xl transition hover:-translate-y-1 sm:flex-row sm:text-left md:p-6"
+          >
+            <img
+              src="/beat-the-lightning/app-home.jpg"
+              alt="Home screen of the Beat the Lightning game"
+              width={560}
+              height={579}
+              className="w-44 shrink-0 rounded-[18px] shadow-lg md:w-52"
+            />
+            <div>
+              <p className="text-xs font-bold tracking-wide text-[#1201A4] uppercase">
+                Free web game
+              </p>
+              <h3 className="mt-1 text-2xl font-bold text-white">
+                BEAT THE LIGHTNING
+              </h3>
+              <p className="mt-2 text-white">
+                Solve each challenge before the lightning strikes
+              </p>
+              <span className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#1201A4] px-6 py-2.5 font-bold text-white shadow-lg transition group-hover:scale-105">
+                Play the game
+                <svg
+                  viewBox="0 0 20 20"
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 4l6 6-6 6" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        </div>
       </section>
 
       {/* ===== Stay in touch: channels + email ===== */}
-      <section className="mx-auto mt-10 max-w-5xl px-4 md:mt-12 md:px-8">
+      <section className="mx-auto mt-8 max-w-5xl px-4 md:mt-10 md:px-8">
         <div className="rounded-[30px] bg-[linear-gradient(135deg,#1376FD_0%,#1201A4_100%)] px-5 py-7 text-center shadow-[0_18px_40px_rgba(0,0,0,0.25)] ring-1 ring-white/10 md:px-10 md:py-9">
           <h2 className="text-2xl font-bold text-white md:text-3xl">
             Stay in touch
@@ -147,7 +162,16 @@ export default function MorePage() {
             href={`mailto:${contactEmail}`}
             className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold break-all text-[#1201A4] shadow-lg transition hover:bg-[#19E0F8]"
           >
-            <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              className="h-5 w-5 shrink-0"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
               <rect x="3" y="5" width="18" height="14" rx="2" />
               <path d="m3 7 9 6 9-6" />
             </svg>
