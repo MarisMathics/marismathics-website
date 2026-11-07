@@ -79,12 +79,12 @@ export default function MorePage() {
                 At MarisMathics, I bring math to life with clarity and a
                 healthy dose of fun. Whether you love math… or think numbers
                 are confusing, you’ll find clear explanations, surprising
-                insights and lightning-fast challenges.{" "}
-                <span className="font-semibold whitespace-nowrap">
-                  Making Math Fun.
-                </span>
+                insights and lightning-fast challenges.
               </p>
             </div>
+            <p className="mt-6 text-center text-3xl font-bold text-[#1201A4] italic md:text-left md:text-4xl">
+              Making Math Fun
+            </p>
           </div>
         </div>
       </section>
