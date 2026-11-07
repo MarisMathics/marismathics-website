@@ -42,11 +42,19 @@ export default function BeatTheLightningPage() {
               </svg>
             </a>
           </div>
-          <div className="hidden w-36 shrink-0 overflow-hidden rounded-[22px] shadow-xl md:block">
-            <video autoPlay muted loop playsInline className="block w-full">
-              <source src="/worlds/btl/btl-preview.mp4" type="video/mp4" />
-            </video>
-          </div>
+          <a
+            href={gameLink}
+            tabIndex={-1}
+            className="hidden w-44 shrink-0 overflow-hidden rounded-[22px] shadow-xl transition hover:scale-[1.03] md:block"
+          >
+            <img
+              src="/beat-the-lightning/app-home.jpg"
+              alt="Home screen of the Beat the Lightning game: Daily lightning and Your lightning"
+              width={480}
+              height={789}
+              className="block w-full"
+            />
+          </a>
         </div>
       </section>
 
