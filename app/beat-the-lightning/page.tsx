@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import BtlCategoryCard from "@/components/BtlCategoryCard";
 import { btlCategories } from "@/lib/btl";
 import { gameLink } from "@/lib/site";
@@ -7,13 +6,13 @@ import { gameLink } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Beat the Lightning | MarisMathics",
   description:
-    "Short, fast-paced math challenges. Can you beat the lightning? Pick your challenge.",
+    "Short, fast-paced math challenges. Can you beat the lightning?",
 };
 
 export default function BeatTheLightningPage() {
   return (
     <main className="bg-[linear-gradient(to_bottom,#1201A4_0%,rgba(18,1,164,0)_16rem),radial-gradient(ellipse_at_50%_35%,#1376FD_0%,#1201A4_70%)] pb-20">
-      {/* ===== Hero: three sentences ===== */}
+      {/* ===== Hero ===== */}
       <section className="mx-auto max-w-4xl px-5 pt-8 text-center md:pt-12">
         <h1 className="text-[2rem] leading-tight font-bold text-[#19E0F8] md:text-5xl lg:text-6xl">
           Welcome to the
@@ -22,9 +21,6 @@ export default function BeatTheLightningPage() {
         </h1>
         <p className="mt-4 text-xl font-semibold text-white md:text-3xl">
           Can you beat the lightning?
-        </p>
-        <p className="mt-2 text-lg font-semibold text-white/90 md:text-2xl">
-          Pick your challenge
         </p>
       </section>
 
@@ -37,19 +33,8 @@ export default function BeatTheLightningPage() {
         </div>
       </section>
 
-      {/* ===== Start hint and the game ===== */}
-      <section className="mx-auto mt-14 flex max-w-4xl flex-col items-center gap-6 px-5 text-center">
-        <p className="text-lg text-white md:text-xl">
-          New here? Start with{" "}
-          <Link
-            href="/beat-the-lightning/classics"
-            className="font-bold text-[#19E0F8] underline decoration-2 underline-offset-4 hover:text-white"
-          >
-            Classics
-          </Link>
-          .
-        </p>
-
+      {/* ===== The game ===== */}
+      <section className="mt-14 flex justify-center px-5">
         <a
           href={gameLink}
           className="inline-flex items-center gap-2 rounded-full border-2 border-[#19E0F8] px-6 py-2.5 font-bold text-white transition hover:bg-[#19E0F8] hover:text-[#1201A4]"
