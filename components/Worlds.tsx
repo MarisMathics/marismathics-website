@@ -18,7 +18,8 @@ export default function Worlds() {
               LIGHTNING
             </>
           }
-          background="bg-[radial-gradient(circle_at_center,#19E0F8_15%,#1376FD_100%)]"
+          background="bg-[#19E0F8]"
+          light
           preview={
             <video
               autoPlay
@@ -50,7 +51,7 @@ export default function Worlds() {
               Math
             </>
           }
-          background="bg-[radial-gradient(circle_at_center,#1376FD_18%,#65E7F6_100%)]"
+          background="bg-[#1376FD]"
           preview={<ExploreCarousel />}
           href={worldLinks.explore}
           cta="Ready to explore math?"
@@ -72,7 +73,7 @@ export default function Worlds() {
               MarisMathics
             </>
           }
-          background="bg-[linear-gradient(to_bottom,#1376fd_0%,#4EABF3_100%)]"
+          background="bg-[#0D47D1]"
           preview={
             <img
               src="/worlds/more/Mariska.png"

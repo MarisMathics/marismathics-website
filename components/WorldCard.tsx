@@ -12,8 +12,10 @@ import Link from "next/link";
 type WorldCardProps = {
   /** Card title; use <br /> for a line break */
   title: ReactNode;
-  /** Tailwind background class (the card's gradient) */
+  /** Tailwind background class (the card's color) */
   background: string;
+  /** Light card color: use dark-blue text */
+  light?: boolean;
   /** Preview inside the card: video, image or carousel */
   preview: ReactNode;
   /** Page the card leads to */
@@ -27,6 +29,7 @@ type WorldCardProps = {
 export default function WorldCard({
   title,
   background,
+  light = false,
   preview,
   href,
   description,
@@ -35,17 +38,17 @@ export default function WorldCard({
   return (
     <Link
       href={href}
-      className={`group mx-auto flex w-full max-w-[350px] flex-col rounded-[36px] ${background} p-6 shadow-[0_18px_40px_rgba(0,0,0,0.18)] transition-all duration-300 outline-none hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(25,224,248,0.45)] focus-visible:ring-4 focus-visible:ring-[#19E0F8] md:rounded-[30px] md:p-3 lg:p-4 xl:mx-0 xl:w-[350px] xl:rounded-[36px] xl:p-6`}
+      className={`group mx-auto flex w-full max-w-[350px] flex-col rounded-[36px] ${background} p-6 shadow-[0_10px_24px_rgba(0,0,0,0.18)] transition-all duration-300 outline-none hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(25,224,248,0.45)] focus-visible:ring-4 focus-visible:ring-[#19E0F8] md:rounded-[30px] md:p-3 lg:p-4 xl:mx-0 xl:w-[350px] xl:rounded-[36px] xl:p-6`}
     >
-      <h2 className="text-center text-[1.7rem] leading-tight text-slate-50 md:text-[1.35rem] xl:text-[1.7rem]">
+      <h2 className={`text-center text-[1.7rem] leading-tight ${light ? "text-[#1201A4]" : "text-slate-50"} md:text-[1.35rem] xl:text-[1.7rem]`}>
         {title}
       </h2>
 
       <div className="mt-4 px-6 md:px-3 xl:px-6">
-        <div className="overflow-hidden rounded-[28px] shadow-xl">{preview}</div>
+        <div className="overflow-hidden rounded-[28px] shadow-xl ring-2 ring-white/40">{preview}</div>
       </div>
 
-      <p className="mt-5 mb-5 text-center text-[16px] leading-6 text-white/95 md:text-[14px] md:leading-5 xl:text-[16px] xl:leading-6">
+      <p className={`mt-5 mb-5 text-center text-[16px] leading-6 ${light ? "text-[#1201A4]" : "text-white/95"} md:text-[14px] md:leading-5 xl:text-[16px] xl:leading-6`}>
         {description}
       </p>
 
