@@ -73,7 +73,7 @@ export default function Worlds() {
               MarisMathics
             </>
           }
-          background="bg-[#0D47D1]"
+          background="bg-[#0A2DB0]"
           preview={
             <img
               src="/worlds/more/Mariska.png"
