@@ -91,12 +91,12 @@ export default function VideoTile({
           className={`mt-2.5 flex flex-col gap-1 px-1 ${video.isShort ? "items-center text-center" : "items-start"}`}
         >
           {video.label && (
-            <span className="text-xs font-bold tracking-wide text-[#19E0F8] uppercase">
+            <span className="text-xs font-bold tracking-wide text-white/80 uppercase">
               {video.label}
             </span>
           )}
           <span
-            className={`leading-snug text-white ${video.isShort ? "text-sm text-white/90" : "text-base font-semibold md:text-lg"}`}
+            className={`leading-snug text-white ${video.isShort ? "text-sm text-white" : "text-base font-semibold md:text-lg"}`}
           >
             {video.caption}
           </span>

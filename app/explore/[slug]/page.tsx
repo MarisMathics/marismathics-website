@@ -39,7 +39,7 @@ export default async function ExploreTopicPage({ params }: Props) {
   const shorts = videos.filter((v) => v.isShort);
 
   return (
-    <main className="bg-[linear-gradient(to_bottom,#1201A4_0%,rgba(18,1,164,0)_12rem),radial-gradient(ellipse_at_50%_25%,#2a8cf0_0%,#1201A4_65%)] pb-20">
+    <main className="pb-20">
       <div className="mx-auto max-w-5xl px-5 pt-6 md:px-8 md:pt-10">
         <Link
           href="/explore"
@@ -59,48 +59,50 @@ export default async function ExploreTopicPage({ params }: Props) {
           label="Math topics"
         />
 
-        {videos.length === 0 ? (
-          <div className="mt-10 flex flex-col items-center gap-3 rounded-[30px] border border-dashed border-cyan-300/50 bg-white/5 px-6 py-14 text-center">
-            <p className="text-xl font-semibold text-white">
-              {topic.name} videos are on their way.
-            </p>
-          </div>
-        ) : (
-          <>
-            {/* Regular videos: large */}
-            {longVideos.length > 0 && (
-              <ul className="mt-10 grid gap-x-8 gap-y-10 md:grid-cols-2">
-                {longVideos.map((v) => (
-                  <li key={v.id}>
-                    <VideoTile video={v} show="format" />
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {/* Shorts */}
-            {shorts.length > 0 && (
-              <ul className="mt-12 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-8">
-                {shorts.map((v) => (
-                  <li key={v.id}>
-                    <VideoTile video={v} show="format" />
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            <div className="mt-12 flex justify-center">
-              <a
-                href={playlistUrl(topic.playlistId)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-white/70 px-6 py-2.5 font-semibold text-white transition hover:border-[#19E0F8] hover:text-[#19E0F8]"
-              >
-                See all {topic.name} videos on YouTube
-              </a>
+        <section className="mt-8 rounded-[24px] bg-[#1376FD] p-4 md:p-8">
+          {videos.length === 0 ? (
+            <div className="flex flex-col items-center gap-3 px-6 py-10 text-center">
+              <p className="text-xl font-semibold text-white">
+                {topic.name} videos are on their way.
+              </p>
             </div>
-          </>
-        )}
+          ) : (
+            <>
+              {/* Regular videos: large */}
+              {longVideos.length > 0 && (
+                <ul className="grid gap-x-8 gap-y-10 md:grid-cols-2">
+                  {longVideos.map((v) => (
+                    <li key={v.id}>
+                      <VideoTile video={v} show="format" />
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {/* Shorts */}
+              {shorts.length > 0 && (
+                <ul className="mt-10 first:mt-0 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-8">
+                  {shorts.map((v) => (
+                    <li key={v.id}>
+                      <VideoTile video={v} show="format" />
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <div className="mt-8 flex justify-center">
+                <a
+                  href={playlistUrl(topic.playlistId)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-2.5 font-semibold text-[#1201A4] transition hover:bg-[#19E0F8]"
+                >
+                  See all {topic.name} videos on YouTube
+                </a>
+              </div>
+            </>
+          )}
+        </section>
       </div>
     </main>
   );
