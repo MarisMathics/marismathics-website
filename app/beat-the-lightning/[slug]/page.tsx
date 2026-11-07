@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { btlCategories, getBtlCategory } from "@/lib/btl";
-import { gameLink } from "@/lib/site";
 import { getPlaylistVideos, playlistUrl } from "@/lib/youtube";
 import VideoTile from "@/components/VideoTile";
+import PlayBlock from "@/components/PlayBlock";
 
 /**
  * Collection page for one Beat the Lightning category,
@@ -46,18 +46,9 @@ export default async function BtlCollectionPage({ params }: Props) {
           <span aria-hidden="true">‹</span> BEAT THE LIGHTNING
         </Link>
 
-        {/* Title and play button */}
-        <div className="mt-4 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-          <h1 className="text-[2.2rem] leading-tight font-bold text-white md:text-5xl">
-            {category.name}
-          </h1>
-          <a
-            href={gameLink}
-            className="inline-flex items-center gap-2 self-start rounded-full bg-[#19E0F8] px-6 py-3 font-bold text-[#1201A4] shadow-lg transition hover:scale-105 md:self-auto"
-          >
-            Play the game
-          </a>
-        </div>
+        <h1 className="mt-4 text-[2.2rem] leading-tight font-bold text-white md:text-5xl">
+          {category.name}
+        </h1>
 
         {/* The other categories */}
         <nav aria-label="Challenge categories" className="mt-6">
@@ -110,11 +101,13 @@ export default async function BtlCollectionPage({ params }: Props) {
               <p className="text-xl font-semibold text-white">
                 The {category.name} videos are on their way.
               </p>
-              <p className="max-w-md text-white/80">
-                In the meantime, you can play the game.
-              </p>
             </div>
           )}
+        </section>
+
+        {/* Play the game, after watching */}
+        <section className="mt-14">
+          <PlayBlock />
         </section>
       </div>
     </main>
