@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { navItems, socials } from "@/lib/site";
+import SocialIcon from "@/components/SocialIcon";
 
 /**
  * Footer on every page: logo and tagline, the three Worlds, the channels.
@@ -55,10 +56,11 @@ export default function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-white transition hover:text-[#19E0F8]"
+                  className="inline-flex items-center gap-2.5 font-semibold text-white transition hover:text-[#19E0F8]"
                 >
+                  <SocialIcon name={s.name} className="h-[18px] w-[18px]" />
                   {s.name}
-                  <span className="ml-2 font-normal text-white/60">{s.handle}</span>
+                  <span className="font-normal text-white/60">{s.handle}</span>
                 </a>
               </li>
             ))}
