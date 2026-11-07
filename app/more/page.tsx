@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ChannelsBlock from "@/components/ChannelsBlock";
+import SocialLinks from "@/components/SocialLinks";
 import { contactEmail, gameLink } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -90,56 +90,62 @@ export default function MorePage() {
       </section>
 
       {/* ===== Made by MarisMathics ===== */}
-      <section className="mx-auto mt-8 max-w-5xl px-4 md:mt-10 md:px-8">
-        <div className="rounded-[30px] border border-white/10 bg-white/[0.06] p-5 pt-6 shadow-[0_18px_40px_rgba(0,0,0,0.18)] md:px-10 md:pt-8 md:pb-10">
-          <h2 className="mb-5 text-center text-2xl font-bold text-white md:mb-7 md:text-3xl">
-            Made by MarisMathics
-          </h2>
-          <a
-            href={gameLink}
-            className="group mx-auto flex max-w-3xl flex-col items-center gap-5 rounded-[24px] bg-[radial-gradient(circle_at_30%_50%,#19E0F8_0%,#1376FD_70%)] p-5 text-center shadow-xl transition hover:-translate-y-1 sm:flex-row sm:text-left md:p-6"
-          >
-            <img
-              src="/beat-the-lightning/app-home.jpg"
-              alt="Home screen of the Beat the Lightning game"
-              width={560}
-              height={579}
-              className="w-44 shrink-0 rounded-[18px] shadow-lg md:w-52"
-            />
-            <div>
-              <p className="text-xs font-bold tracking-wide text-[#1201A4] uppercase">
-                Free web game
-              </p>
-              <h3 className="mt-1 text-2xl font-bold text-white">
-                BEAT THE LIGHTNING
-              </h3>
-              <p className="mt-2 text-white">
-                Solve each challenge before the lightning strikes
-              </p>
-              <span className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#1201A4] px-6 py-2.5 font-bold text-white shadow-lg transition group-hover:scale-105">
-                Play the game
-                <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M7 4l6 6-6 6" />
-                </svg>
-              </span>
-            </div>
-          </a>
-        </div>
+      <section className="mx-auto mt-10 max-w-5xl px-4 md:mt-12 md:px-8">
+        <h2 className="mb-5 text-center text-2xl font-bold text-white md:mb-7 md:text-3xl">
+          Made by MarisMathics
+        </h2>
+        <a
+          href={gameLink}
+          className="group mx-auto flex max-w-3xl flex-col items-center gap-5 rounded-[30px] bg-[radial-gradient(circle_at_30%_50%,#19E0F8_0%,#1376FD_70%)] p-6 text-center shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition hover:-translate-y-1 sm:flex-row sm:text-left md:p-7"
+        >
+          <img
+            src="/beat-the-lightning/app-home.jpg"
+            alt="Home screen of the Beat the Lightning game"
+            width={560}
+            height={579}
+            className="w-44 shrink-0 rounded-[18px] shadow-lg md:w-52"
+          />
+          <div>
+            <p className="text-xs font-bold tracking-wide text-[#1201A4] uppercase">
+              Free web game
+            </p>
+            <h3 className="mt-1 text-2xl font-bold text-white">
+              BEAT THE LIGHTNING
+            </h3>
+            <p className="mt-2 text-white">
+              Solve each challenge before the lightning strikes
+            </p>
+            <span className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#1201A4] px-6 py-2.5 font-bold text-white shadow-lg transition group-hover:scale-105">
+              Play the game
+              <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M7 4l6 6-6 6" />
+              </svg>
+            </span>
+          </div>
+        </a>
       </section>
 
-      {/* ===== Channels ===== */}
-      <ChannelsBlock title="Follow MarisMathics" />
+      {/* ===== Stay in touch: channels + email ===== */}
+      <section className="mx-auto mt-10 max-w-5xl px-4 md:mt-12 md:px-8">
+        <div className="rounded-[30px] bg-[linear-gradient(135deg,#1376FD_0%,#1201A4_100%)] px-5 py-7 text-center shadow-[0_18px_40px_rgba(0,0,0,0.25)] ring-1 ring-white/10 md:px-10 md:py-9">
+          <h2 className="text-2xl font-bold text-white md:text-3xl">
+            Stay in touch
+          </h2>
+          <p className="mt-2 text-white/85">
+            A new MarisMathics video every other day
+          </p>
+          <div className="mt-5">
+            <SocialLinks center />
+          </div>
 
-      {/* ===== Contact ===== */}
-      <section className="mx-auto mt-8 max-w-5xl px-4 md:mt-10 md:px-8">
-        <div className={`${panel} px-5 py-7 text-center md:py-9`}>
-          <h2 className={h2}>Get in touch</h2>
-          <p className="mt-2 text-white">
+          <div className="mx-auto my-7 h-px max-w-md bg-white/20" />
+
+          <p className="text-white/85">
             Questions, ideas or a collaboration? Send me an email
           </p>
           <a
             href={`mailto:${contactEmail}`}
-            className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold break-all text-[#1201A4] shadow-lg transition hover:bg-[#19E0F8]"
+            className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold break-all text-[#1201A4] shadow-lg transition hover:bg-[#19E0F8]"
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <rect x="3" y="5" width="18" height="14" rx="2" />
