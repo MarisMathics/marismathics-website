@@ -59,10 +59,10 @@ export default async function ExploreTopicPage({ params }: Props) {
           label="Math topics"
         />
 
-        <section className="mt-8 rounded-[24px] bg-[#E8FAFD] p-4 md:p-8">
+        <section className="mt-10">
           {videos.length === 0 ? (
             <div className="flex flex-col items-center gap-3 px-6 py-10 text-center">
-              <p className="text-xl font-semibold text-[#1201A4]">
+              <p className="text-xl font-semibold text-white">
                 {topic.name} videos are on their way.
               </p>
             </div>
@@ -95,7 +95,7 @@ export default async function ExploreTopicPage({ params }: Props) {
                   href={playlistUrl(topic.playlistId)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#1201A4] px-6 py-2.5 font-semibold text-white transition hover:bg-[#1376FD]"
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-2.5 font-semibold text-[#1201A4] transition hover:bg-[#19E0F8]"
                 >
                   See all {topic.name} videos on YouTube
                 </a>

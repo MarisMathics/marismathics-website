@@ -41,7 +41,7 @@ export default function VideoTile({
   return (
     <figure className="flex flex-col">
       <div
-        className={`relative w-full overflow-hidden rounded-[20px] bg-[#1201A4] shadow-[0_6px_16px_rgba(18,1,164,0.18)] ${
+        className={`relative w-full overflow-hidden rounded-[20px] bg-[#1201A4] shadow-[0_8px_20px_rgba(0,0,0,0.2)] ring-1 ring-white/10 ${
           video.isShort ? "aspect-[9/16]" : "aspect-video"
         }`}
       >
@@ -80,9 +80,9 @@ export default function VideoTile({
         )}
       </div>
       {show === "number" ? (
-        <figcaption className="mt-2 px-1 text-center text-sm leading-snug text-[#1201A4]">
+        <figcaption className="mt-2 px-1 text-center text-sm leading-snug text-white">
           {video.nr && (
-            <span className="mr-1.5 font-bold text-[#1376FD]">#{video.nr}</span>
+            <span className="mr-1.5 font-bold text-white">#{video.nr}</span>
           )}
           {video.caption}
         </figcaption>
@@ -91,12 +91,12 @@ export default function VideoTile({
           className={`mt-2.5 flex flex-col gap-1 px-1 ${video.isShort ? "items-center text-center" : "items-start"}`}
         >
           {video.label && (
-            <span className="text-xs font-bold tracking-wide text-[#1376FD] uppercase">
+            <span className="text-xs font-bold tracking-wide text-white/80 uppercase">
               {video.label}
             </span>
           )}
           <span
-            className={`leading-snug text-[#1201A4] ${video.isShort ? "text-sm" : "text-base font-semibold md:text-lg"}`}
+            className={`leading-snug text-white ${video.isShort ? "text-sm text-white" : "text-base font-semibold md:text-lg"}`}
           >
             {video.caption}
           </span>
