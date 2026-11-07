@@ -60,7 +60,7 @@ export default async function BtlCollectionPage({ params }: Props) {
         />
 
         {/* Videos: read from the YouTube playlist (newest first) */}
-        <section className="mt-8 rounded-[24px] bg-[#1376FD] p-4 md:p-8">
+        <section className="mt-8 rounded-[24px] bg-[#E8FAFD] p-4 md:p-8">
           {videos.length > 0 ? (
             <>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-8">
@@ -75,7 +75,7 @@ export default async function BtlCollectionPage({ params }: Props) {
                   href={playlistUrl(category.playlistId)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-2.5 font-semibold text-[#1201A4] transition hover:bg-[#19E0F8]"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#1201A4] px-6 py-2.5 font-semibold text-white transition hover:bg-[#1376FD]"
                 >
                   See all {category.name} videos on YouTube
                 </a>
@@ -83,7 +83,7 @@ export default async function BtlCollectionPage({ params }: Props) {
             </>
           ) : (
             <div className="flex flex-col items-center gap-3 px-6 py-10 text-center">
-              <p className="text-xl font-semibold text-white">
+              <p className="text-xl font-semibold text-[#1201A4]">
                 The {category.name} videos are on their way.
               </p>
             </div>
