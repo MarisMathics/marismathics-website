@@ -7,8 +7,8 @@ import { worldLinks } from "@/lib/site";
  */
 export default function Worlds() {
   return (
-    <section className="mx-auto mt-7 mb-16 max-w-7xl px-8 md:px-6 xl:px-8">
-      <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-5 xl:gap-12">
+    <section className="mx-auto mt-7 mb-16 max-w-7xl px-8 md:px-5 lg:px-6 xl:px-8">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-4 lg:gap-5 xl:gap-12">
         {/* ===== BEAT THE LIGHTNING ===== */}
         <WorldCard
           title={
