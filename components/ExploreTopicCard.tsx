@@ -4,7 +4,7 @@ import type { ExploreTopic } from "@/lib/explore";
 
 /**
  * One maths topic on the Explore Math page: the thumbnail of one of
- * Mariska's videos with the topic name in a white label below. The whole card is a link.
+ * Mariska's videos with the topic name below. The whole card is a link.
  */
 export default function ExploreTopicCard({ topic }: { topic: ExploreTopic }) {
   const { videoId, isShort } = topic.cover;
@@ -36,7 +36,7 @@ export default function ExploreTopicCard({ topic }: { topic: ExploreTopic }) {
           </>
         )}
       </span>
-      <h3 className="mt-3 self-center rounded-full bg-white px-4 py-1.5 text-center text-sm font-bold text-[#1201A4] shadow-[0_6px_18px_rgba(18,1,164,0.25)] transition-colors group-hover:bg-[#1201A4] group-hover:text-white md:text-base">
+      <h3 className="mt-3 text-center text-base font-bold text-white [text-shadow:0_1px_6px_rgba(18,1,164,0.45)] transition-colors group-hover:text-[#1201A4] group-hover:[text-shadow:none] md:text-lg">
         {topic.name}
       </h3>
     </Link>
