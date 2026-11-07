@@ -26,11 +26,11 @@ export default function ExplorePage() {
 
       {/* ===== Topics ===== */}
       <section className="mx-auto mt-8 max-w-5xl px-4 md:mt-10 md:px-8">
-        <div className="rounded-[24px] bg-[#1376FD] p-5 pt-6 md:px-10 md:pt-8 md:pb-10">
+        <div className="rounded-[24px] bg-[#1376FD] p-5 pt-6 md:px-5 md:pt-8 md:pb-8">
           <h2 className="mb-5 text-center text-2xl font-bold text-white md:mb-7 md:text-3xl">
             Explore by topic
           </h2>
-          <div className="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-4 md:gap-x-8">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-4 md:gap-x-4">
             {exploreTopics.map((t) => (
               <ExploreTopicCard key={t.slug} topic={t} />
             ))}
