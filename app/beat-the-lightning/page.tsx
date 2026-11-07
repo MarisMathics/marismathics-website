@@ -5,7 +5,7 @@ import { btlCategories } from "@/lib/btl";
 import { gameLink } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Beat the Lightning | MarisMathics",
+  title: "BEAT THE LIGHTNING | MarisMathics",
   description:
     "Short, fast-paced math challenges. Can you beat the lightning?",
 };

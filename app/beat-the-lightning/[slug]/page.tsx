@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const category = getBtlCategory(slug);
   return {
-    title: `${category?.name ?? "Beat the Lightning"} | Beat the Lightning | MarisMathics`,
+    title: `${category?.name ?? "BEAT THE LIGHTNING"} | BEAT THE LIGHTNING | MarisMathics`,
     description: "Can you beat the lightning? Solve each challenge before the lightning strikes.",
   };
 }
