@@ -2,7 +2,8 @@ import Link from "next/link";
 import { navItems, socials } from "@/lib/site";
 
 /**
- * Footer on every page: logo and tagline, the Worlds, the channels.
+ * Footer on every page: logo and tagline, the three Worlds, the channels.
+ * (The logo links to the homepage.)
  * Navigation and channels come from lib/site.ts.
  */
 export default function Footer() {
@@ -28,12 +29,11 @@ export default function Footer() {
         </div>
 
         {/* The Worlds */}
-        <nav aria-label="Footer">
-          <h2 className="text-sm font-bold tracking-[0.15em] text-white/60 uppercase">
-            Explore
-          </h2>
-          <ul className="mt-4 space-y-2.5">
-            {navItems.map((item) => (
+        <nav aria-label="Footer" className="md:pt-2">
+          <ul className="space-y-2.5">
+            {navItems
+              .filter((item) => item.href !== "/")
+              .map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
@@ -47,11 +47,8 @@ export default function Footer() {
         </nav>
 
         {/* Channels */}
-        <div>
-          <h2 className="text-sm font-bold tracking-[0.15em] text-white/60 uppercase">
-            Follow
-          </h2>
-          <ul className="mt-4 space-y-2.5">
+        <div className="md:pt-2">
+          <ul className="space-y-2.5">
             {socials.map((s) => (
               <li key={s.name}>
                 <a
