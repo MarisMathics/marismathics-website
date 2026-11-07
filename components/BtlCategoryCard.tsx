@@ -4,7 +4,7 @@ import type { BtlCategory } from "@/lib/btl";
 
 /**
  * One challenge category on the Beat the Lightning page.
- * The whole card is a link; the round GO logo is the brand element.
+ * The whole card is a link.
  */
 export default function BtlCategoryCard({ category }: { category: BtlCategory }) {
   return (
@@ -14,21 +14,9 @@ export default function BtlCategoryCard({ category }: { category: BtlCategory })
     >
       <BtlThumb slug={category.slug} nr={category.previewNr} />
 
-      <div className="mt-3 flex items-center justify-between gap-2 px-1">
-        <h2 className="text-[15px] leading-tight font-semibold text-white md:text-lg">
-          {category.name}
-        </h2>
-        <span className="flex shrink-0 flex-col items-center">
-          <img
-            src="/branding/compass-enter.svg"
-            alt=""
-            className="h-8 w-8 transition-all md:h-10 md:w-10 duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_18px_rgba(24,224,248,0.9)]"
-          />
-          <span className="-mt-0.5 text-[11px] font-bold tracking-wide text-[#1201A4]">
-            GO
-          </span>
-        </span>
-      </div>
+      <h2 className="mt-3 px-1 text-center text-[15px] leading-tight font-semibold text-white md:text-lg">
+        {category.name}
+      </h2>
     </Link>
   );
 }
