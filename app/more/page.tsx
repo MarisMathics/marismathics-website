@@ -60,8 +60,9 @@ export default function MorePage() {
               <p>
                 I didn’t start out in a classroom. I studied business
                 engineering and spent twelve years coordinating projects in
-                logistics. Then I earned my teaching degree, and in 2019 I
-                switched to the classroom. Math became my daily work.
+                logistics. But my dream was to stand in front of a classroom.
+                So I earned my teaching degree, and in 2019 I made the switch.
+                Math became my daily work, and I love it.
               </p>
               <p>
                 What I enjoy most are those{" "}
