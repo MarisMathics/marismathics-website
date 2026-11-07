@@ -39,7 +39,7 @@ export default async function BtlCollectionPage({ params }: Props) {
           href="/beat-the-lightning"
           className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#19E0F8] hover:text-white"
         >
-          <span aria-hidden="true">‹</span> Beat the Lightning
+          <span aria-hidden="true">‹</span> BEAT THE LIGHTNING
         </Link>
 
         {/* Title and play button */}

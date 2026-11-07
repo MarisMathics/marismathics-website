@@ -68,7 +68,7 @@ export default function BeatTheLightningPage() {
           More lightning on the channels
         </h2>
         <p className="mt-2 mb-6 text-white/85">
-          A new Beat the Lightning challenge every other day.
+          A new BEAT THE LIGHTNING challenge every other day.
         </p>
         <SocialLinks center />
       </section>
