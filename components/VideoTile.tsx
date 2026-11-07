@@ -43,10 +43,10 @@ export default function VideoTile({ video }: { video: YtVideo }) {
         )}
       </div>
       <figcaption className="mt-2 px-1 text-center text-sm leading-snug text-white/90">
-        {video.caption}
         {video.nr && (
-          <span className="ml-1.5 font-semibold text-[#19E0F8]">#{video.nr}</span>
+          <span className="mr-1.5 font-semibold text-[#19E0F8]">#{video.nr}</span>
         )}
+        {video.caption}
       </figcaption>
     </figure>
   );
