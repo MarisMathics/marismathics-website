@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Beat The Lightning game: plain browser scripts, built by lightning-src/build.py
+    "lightning-src/**",
+    "public/**",
   ]),
 ]);
 

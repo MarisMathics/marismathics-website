@@ -89,9 +89,9 @@ export default function BeatTheLightningPage() {
         </div>
       </Section>
 
-      <Section title="New challenges every day">
+      <Section title="More lightning on the channels">
         <p className="mb-5 max-w-2xl leading-7 text-white/90">
-          Until then, you can find new Beat The Lightning challenges on the
+          A new Beat The Lightning challenge every other day on the
           MarisMathics channels.
         </p>
         <SocialLinks />
