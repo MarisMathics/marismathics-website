@@ -9,7 +9,7 @@ export default function ChannelsBlock({
   title?: string;
 }) {
   return (
-      <section className="mx-auto mt-14 max-w-5xl px-4 md:mt-20 md:px-8">
+      <section className="mx-auto mt-8 max-w-5xl px-4 md:mt-10 md:px-8">
         <div className="rounded-[24px] bg-[#1376FD] px-5 py-7 text-center md:px-10 md:py-9">
           <div>
             <h2 className="text-2xl font-bold text-white md:text-3xl">
