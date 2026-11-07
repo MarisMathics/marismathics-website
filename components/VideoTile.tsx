@@ -80,9 +80,9 @@ export default function VideoTile({
         )}
       </div>
       {show === "number" ? (
-        <figcaption className="mt-2 px-1 text-center text-sm leading-snug text-white/90">
+        <figcaption className="mt-2 px-1 text-center text-sm leading-snug text-white">
           {video.nr && (
-            <span className="mr-1.5 font-semibold text-[#19E0F8]">#{video.nr}</span>
+            <span className="mr-1.5 font-bold text-white">#{video.nr}</span>
           )}
           {video.caption}
         </figcaption>
