@@ -15,10 +15,8 @@ export default function BeatTheLightningPage() {
     <main className="bg-[linear-gradient(to_bottom,#1201A4_0%,rgba(18,1,164,0)_16rem),radial-gradient(ellipse_at_50%_35%,#1376FD_0%,#1201A4_70%)] pb-20">
       {/* ===== Hero ===== */}
       <section className="mx-auto max-w-4xl px-5 pt-8 text-center md:pt-12">
-        <h1 className="text-[2rem] leading-tight font-bold text-[#19E0F8] md:text-5xl lg:text-6xl">
-          Welcome to the
-          <br />
-          <span className="md:whitespace-nowrap">BEAT THE LIGHTNING</span> Universe
+        <h1 className="text-[2.2rem] leading-tight font-bold text-[#19E0F8] md:text-6xl">
+          BEAT THE LIGHTNING
         </h1>
       </section>
 
