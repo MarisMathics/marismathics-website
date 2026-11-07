@@ -7,7 +7,7 @@ import { gameLink } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Beat the Lightning | MarisMathics",
   description:
-    "Short, fast-paced math challenges. Can you beat the lightning? Choose your challenge.",
+    "Short, fast-paced math challenges. Can you beat the lightning? Pick your challenge.",
 };
 
 export default function BeatTheLightningPage() {
@@ -15,14 +15,16 @@ export default function BeatTheLightningPage() {
     <main className="bg-[linear-gradient(to_bottom,#1201A4_0%,rgba(18,1,164,0)_16rem),radial-gradient(ellipse_at_50%_35%,#1376FD_0%,#1201A4_70%)] pb-20">
       {/* ===== Hero: three sentences ===== */}
       <section className="mx-auto max-w-4xl px-5 pt-8 text-center md:pt-12">
-        <p className="text-sm font-semibold tracking-[0.18em] text-[#19E0F8] uppercase md:text-base">
-          Welcome to the Beat the Lightning Universe.
-        </p>
-        <h1 className="mt-4 text-[2.2rem] leading-tight font-bold text-white md:text-6xl">
-          Can you beat the lightning?
+        <h1 className="text-[2rem] leading-tight font-bold text-white md:text-5xl lg:text-6xl">
+          Welcome to the
+          <br />
+          <span className="whitespace-nowrap">Beat the Lightning</span> Universe
         </h1>
-        <p className="mt-4 text-xl font-semibold text-white/90 md:text-2xl">
-          Choose your Challenge.
+        <p className="mt-4 text-xl font-semibold text-[#19E0F8] md:text-3xl">
+          Can you beat the lightning?
+        </p>
+        <p className="mt-2 text-lg font-semibold text-white/90 md:text-2xl">
+          Pick your Challenge
         </p>
       </section>
 
