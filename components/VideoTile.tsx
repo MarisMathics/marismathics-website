@@ -29,7 +29,7 @@ export default function VideoTile({ video }: { video: YtVideo }) {
             className="group absolute inset-0 outline-none focus-visible:ring-4 focus-visible:ring-[#19E0F8]"
           >
             <img
-              src={`https://i.ytimg.com/vi/${video.id}/oar2.jpg`}
+              src={`https://i.ytimg.com/vi/${video.id}/oar1.jpg`}
               alt=""
               loading="lazy"
               className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
