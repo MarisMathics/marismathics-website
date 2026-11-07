@@ -26,8 +26,8 @@ export default function ExplorePage() {
 
       {/* ===== Topics ===== */}
       <section className="mx-auto mt-10 max-w-5xl px-4 md:mt-12 md:px-8">
-        <div className="rounded-[30px] border border-white/10 bg-white/[0.06] p-5 pt-6 shadow-[0_18px_40px_rgba(0,0,0,0.18)] md:px-10 md:pt-8 md:pb-10">
-          <h2 className="mb-5 text-center text-2xl font-bold text-white md:mb-7 md:text-3xl">
+        <div className="rounded-[30px] bg-[radial-gradient(circle_at_center,#1376FD_18%,#65E7F6_100%)] p-5 pt-6 shadow-[0_18px_40px_rgba(0,0,0,0.25)] md:px-10 md:pt-8 md:pb-10">
+          <h2 className="mb-5 text-center text-2xl font-bold text-white [text-shadow:0_1px_8px_rgba(18,1,164,0.35)] md:mb-7 md:text-3xl">
             Explore by topic
           </h2>
           <div className="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-4 md:gap-x-8">
