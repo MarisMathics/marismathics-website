@@ -33,13 +33,13 @@ export const exploreTopics: ExploreTopic[] = [
   {
     slug: "powers-and-roots",
     name: "Powers & Roots",
-    cover: { videoId: "N3Lll-_XAl4", isShort: true }, // 6⁻² = ? (Almost Right…)
+    cover: { videoId: "mDAR_McfX2A", isShort: true }, // √25 = ±5 (Almost Right…, Nov 2026)
     playlistId: "PLSUtl_hk2rq4",
   },
   {
     slug: "geometry",
     name: "Geometry",
-    cover: { videoId: "7vl-qgEoaEw", isShort: true }, // Right Triangle… Wrong Formula? (Almost Right…)
+    cover: { videoId: "DdpenGLw-ks", isShort: true }, // Not Quite the Right Ratio (Almost Right…, May 2026)
     playlistId: "PLUxqfYwHPHxE",
   },
 ];
