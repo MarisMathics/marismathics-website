@@ -41,7 +41,7 @@ export default function VideoTile({
   return (
     <figure className="flex flex-col">
       <div
-        className={`relative w-full overflow-hidden rounded-[20px] bg-[#1201A4] shadow-[0_14px_30px_rgba(0,0,0,0.3)] ring-1 ring-white/10 ${
+        className={`relative w-full overflow-hidden rounded-[20px] bg-[#1201A4] shadow-[0_8px_20px_rgba(0,0,0,0.2)] ring-1 ring-white/10 ${
           video.isShort ? "aspect-[9/16]" : "aspect-video"
         }`}
       >
