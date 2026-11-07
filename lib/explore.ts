@@ -10,7 +10,7 @@ export type ExploreTopic = {
   name: string;
   /**
    * The video whose YouTube thumbnail is shown on the topic card.
-   * isShort: false for a regular (landscape) video; its left part is shown.
+   * isShort: false for a regular (landscape) video; shown whole on a blurred background.
    */
   cover: { videoId: string; isShort: boolean };
   /** YouTube playlist ID (the part after "list=" in the playlist link) */
