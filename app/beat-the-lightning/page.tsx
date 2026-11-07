@@ -70,14 +70,20 @@ export default function BeatTheLightningPage() {
       </section>
 
       {/* ===== Channels ===== */}
-      <section className="mx-auto mt-16 max-w-4xl px-5 text-center">
-        <h2 className="text-2xl font-bold text-white md:text-3xl">
-          More lightning on the channels
-        </h2>
-        <p className="mt-2 mb-6 text-white/85">
-          A new MarisMathics video every other day.
-        </p>
-        <SocialLinks center />
+      <section className="mx-auto mt-8 max-w-5xl px-4 md:mt-10 md:px-8">
+        <div className="rounded-[30px] border border-white/10 bg-white/[0.06] px-5 py-7 text-center shadow-[0_18px_40px_rgba(0,0,0,0.18)] md:px-10 md:py-9">
+          <div>
+            <h2 className="text-2xl font-bold text-white md:text-3xl">
+              More lightning on the channels
+            </h2>
+            <p className="mt-2 text-white/85">
+              A new MarisMathics video every other day.
+            </p>
+          </div>
+          <div className="mt-5">
+            <SocialLinks center />
+          </div>
+        </div>
       </section>
     </main>
   );

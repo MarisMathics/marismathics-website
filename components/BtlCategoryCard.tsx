@@ -2,14 +2,15 @@ import Link from "next/link";
 import type { BtlCategory } from "@/lib/btl";
 
 /**
- * One challenge category on the Beat the Lightning page.
+ * One challenge category on the Beat the Lightning page:
+ * a still from a video with the category name below.
  * The whole card is a link.
  */
 export default function BtlCategoryCard({ category }: { category: BtlCategory }) {
   return (
     <Link
       href={`/beat-the-lightning/${category.slug}`}
-      className="group mx-auto flex w-full max-w-[280px] flex-col rounded-[26px] bg-[radial-gradient(circle_at_center,#19E0F8_15%,#1376FD_100%)] p-3 md:p-4 shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition-all duration-300 outline-none hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(25,224,248,0.5)] focus-visible:ring-4 focus-visible:ring-[#19E0F8]"
+      className="group mx-auto flex w-full max-w-[260px] flex-col rounded-[20px] outline-none focus-visible:ring-4 focus-visible:ring-[#19E0F8]"
     >
       <img
         src={category.image}
@@ -17,12 +18,11 @@ export default function BtlCategoryCard({ category }: { category: BtlCategory })
         width={540}
         height={960}
         loading="lazy"
-        className="aspect-[9/16] w-full rounded-[20px] object-cover shadow-xl"
+        className="aspect-[9/16] w-full rounded-[20px] object-cover shadow-[0_14px_30px_rgba(0,0,0,0.3)] ring-1 ring-white/10 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_0_36px_rgba(25,224,248,0.55)] group-hover:ring-2 group-hover:ring-[#19E0F8]"
       />
-
-      <h2 className="mt-3 px-1 text-center text-[15px] leading-tight font-semibold text-white md:text-lg">
+      <h3 className="mt-3 text-center text-[15px] leading-tight font-semibold text-white transition-colors group-hover:text-[#19E0F8] md:text-lg">
         {category.name}
-      </h2>
+      </h3>
     </Link>
   );
 }
