@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BtlCategoryCard from "@/components/BtlCategoryCard";
+import SocialLinks from "@/components/SocialLinks";
 import { btlCategories } from "@/lib/btl";
 import { gameLink } from "@/lib/site";
 
@@ -24,8 +25,39 @@ export default function BeatTheLightningPage() {
         </p>
       </section>
 
-      {/* ===== Six challenge categories ===== */}
-      <section className="mx-auto mt-10 max-w-5xl px-4 md:mt-14 md:px-8">
+      {/* ===== Play: the game ===== */}
+      <section className="mx-auto mt-8 max-w-5xl px-4 md:mt-10 md:px-8">
+        <div className="flex items-center gap-8 rounded-[30px] bg-[radial-gradient(circle_at_30%_50%,#19E0F8_0%,#1376FD_70%)] p-6 shadow-[0_18px_40px_rgba(0,0,0,0.25)] md:px-10 md:py-7">
+          <div className="flex-1 text-center md:text-left">
+            <h2 className="text-2xl font-bold text-white md:text-3xl">
+              Play Beat the Lightning
+            </h2>
+            <p className="mt-2 text-base leading-7 text-white/95 md:text-lg">
+              A new Daily lightning every day, or set up your own.
+            </p>
+            <a
+              href={gameLink}
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#1201A4] px-8 py-3.5 text-lg font-bold text-white shadow-lg transition hover:scale-105 hover:shadow-[0_0_30px_rgba(18,1,164,0.55)]"
+            >
+              Play the game
+              <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M7 4l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+          <div className="hidden w-36 shrink-0 overflow-hidden rounded-[22px] shadow-xl md:block">
+            <video autoPlay muted loop playsInline className="block w-full">
+              <source src="/worlds/btl/btl-preview.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Watch: six challenge categories ===== */}
+      <section className="mx-auto mt-14 max-w-5xl px-4 md:mt-16 md:px-8">
+        <h2 className="mb-6 text-center text-2xl font-bold text-white md:mb-8 md:text-3xl">
+          Watch the challenges
+        </h2>
         <div className="grid grid-cols-2 items-start gap-x-4 gap-y-6 md:grid-cols-3 md:gap-x-10 md:gap-y-10">
           {btlCategories.map((c) => (
             <BtlCategoryCard key={c.slug} category={c} />
@@ -33,14 +65,15 @@ export default function BeatTheLightningPage() {
         </div>
       </section>
 
-      {/* ===== The game ===== */}
-      <section className="mt-14 flex justify-center px-5">
-        <a
-          href={gameLink}
-          className="inline-flex items-center gap-2 rounded-full border-2 border-[#19E0F8] px-6 py-2.5 font-bold text-white transition hover:bg-[#19E0F8] hover:text-[#1201A4]"
-        >
-          ⚡ Play the game
-        </a>
+      {/* ===== Channels ===== */}
+      <section className="mx-auto mt-16 max-w-4xl px-5 text-center">
+        <h2 className="text-2xl font-bold text-white md:text-3xl">
+          More lightning on the channels
+        </h2>
+        <p className="mt-2 mb-6 text-white/85">
+          A new Beat the Lightning challenge every other day.
+        </p>
+        <SocialLinks center />
       </section>
     </main>
   );

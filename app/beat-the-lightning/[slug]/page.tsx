@@ -51,7 +51,7 @@ export default async function BtlCollectionPage({ params }: Props) {
             href={gameLink}
             className="inline-flex items-center gap-2 self-start rounded-full bg-[#19E0F8] px-6 py-3 font-bold text-[#1201A4] shadow-lg transition hover:scale-105 md:self-auto"
           >
-            ⚡ Play the game
+            Play the game
           </a>
         </div>
 

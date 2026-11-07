@@ -1,9 +1,9 @@
 import { socials } from "@/lib/site";
 
 /** Buttons linking to the MarisMathics social media channels. */
-export default function SocialLinks() {
+export default function SocialLinks({ center = false }: { center?: boolean }) {
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className={`flex flex-wrap gap-3 ${center ? "justify-center" : ""}`}>
       {socials.map((s) => (
         <a
           key={s.name}

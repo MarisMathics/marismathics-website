@@ -13,7 +13,7 @@ export default function MorePage() {
     <main>
       <WorldHero
         title="More MarisMathics"
-        teaser="Want more MarisMathics? ⚡"
+        teaser="Want more MarisMathics?"
         background="bg-[linear-gradient(to_bottom,#1376fd_0%,#4EABF3_100%)]"
         aside={
           <img

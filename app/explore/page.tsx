@@ -29,7 +29,7 @@ export default function ExplorePage() {
     <main>
       <WorldHero
         title="Explore Math"
-        teaser="Ready to explore math? ⚡"
+        teaser="Ready to explore math?"
         background="bg-[radial-gradient(circle_at_30%_40%,#1376FD_10%,#65E7F6_100%)]"
       >
         <p>
