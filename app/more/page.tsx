@@ -50,7 +50,7 @@ export default function MorePage() {
             className="w-48 shrink-0 rounded-full shadow-xl ring-4 ring-white/70 md:w-64"
           />
           <div className="md:text-left">
-            <h2 className={`${h2} text-center md:text-left`}>Hi, I’m Mariska</h2>
+            <h2 className={`${h2} text-center`}>Hi, I’m Mariska</h2>
             <div className="mt-4 space-y-4 text-lg leading-8 text-white">
               <p>
                 I’m the “Maris” behind MarisMathics: a math teacher in
@@ -82,7 +82,7 @@ export default function MorePage() {
                 insights and lightning-fast challenges.
               </p>
             </div>
-            <p className="mt-6 text-center text-3xl font-bold text-[#1201A4] italic md:text-left md:text-4xl">
+            <p className="mt-6 text-center text-xl font-bold text-[#1201A4] italic md:text-2xl">
               Making Math Fun
             </p>
           </div>

@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { navItems, socials } from "@/lib/site";
+import { contactEmail, navItems, socials } from "@/lib/site";
 import SocialIcon from "@/components/SocialIcon";
 
 /**
- * Footer on every page: logo and tagline, the three Worlds, the channels.
+ * Footer on every page: logo and tagline, the three Worlds, the channels
+ * and the contact email.
  * (The logo links to the homepage.)
  * Navigation and channels come from lib/site.ts.
  */
@@ -65,6 +66,18 @@ export default function Footer() {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href={`mailto:${contactEmail}`}
+                className="inline-flex items-center gap-2.5 font-semibold text-white transition hover:text-[#19E0F8]"
+              >
+                <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m3 7 9 6 9-6" />
+                </svg>
+                {contactEmail}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
