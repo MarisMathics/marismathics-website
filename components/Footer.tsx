@@ -83,9 +83,12 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <p className="mx-auto max-w-5xl px-5 py-5 text-center text-sm text-white/60 md:px-8 md:text-left">
-          © {year} MarisMathics
-        </p>
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 px-5 py-5 text-sm text-white/60 sm:flex-row sm:justify-between md:px-8">
+          <p>© {year} MarisMathics</p>
+          <Link href="/privacy" className="transition hover:text-[#19E0F8]">
+            Privacy
+          </Link>
+        </div>
       </div>
     </footer>
   );
