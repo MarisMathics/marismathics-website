@@ -21,6 +21,7 @@ const libreBaskerville = Libre_Baskerville({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.marismathics.com"),
   title: "MarisMathics",
   description:
     "Making Math Fun: lightning-fast math challenges, clear explanations and a few laughs along the way.",
