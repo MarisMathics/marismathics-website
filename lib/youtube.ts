@@ -12,7 +12,42 @@ export type YtVideo = {
   caption: string;
   /** Video number, e.g. "163" (null if the title has none) */
   nr: string | null;
+  /** Format named in the title, e.g. "Almost Right…" (null if none) */
+  label: string | null;
+  /** true for a YouTube Short (vertical), false for a regular video */
+  isShort: boolean;
 };
+
+/** One spelling per format, whatever the title uses */
+const FORMAT_NAMES: [RegExp, string][] = [
+  [/^almost right/i, "Almost Right…"],
+  [/^symbols live/i, "Symbols Live"],
+  [/^math irl/i, "Math IRL"],
+  [/^behind the lightning/i, "Behind the Lightning"],
+  [/^think twice/i, "Think Twice…"],
+  [/^marismath music/i, "MarisMath Music"],
+  [/^beat the lightning/i, "BEAT THE LIGHTNING"],
+];
+
+function formatName(raw: string) {
+  const clean = raw.replace(/#\d*/g, "").trim();
+  if (!clean) return null;
+  return FORMAT_NAMES.find(([re]) => re.test(clean))?.[1] ?? clean;
+}
+
+/**
+ * Splits a title into caption and format. Handles both styles:
+ * "Power to a Power⚡MarisMath Music" and "One Solution? (Almost Right...)".
+ */
+function splitTitle(title: string) {
+  if (title.includes("⚡")) {
+    const [caption, ...rest] = title.split("⚡");
+    return { caption: caption.trim(), label: formatName(rest.join(" ")) };
+  }
+  const m = title.match(/^(.*?)\s*\(([^()]+)\)\s*$/);
+  if (m) return { caption: m[1].trim(), label: formatName(m[2]) };
+  return { caption: title, label: null };
+}
 
 const REVALIDATE_SECONDS = 6 * 60 * 60;
 
@@ -46,9 +81,10 @@ export function parseFeed(xml: string): YtVideo[] {
     .map((entry) => {
       const id = entry.match(/<yt:videoId>([^<]+)<\/yt:videoId>/)?.[1] ?? "";
       const title = decode(entry.match(/<title>([^<]*)<\/title>/)?.[1] ?? "").trim();
-      const caption = title.split("⚡")[0].trim() || title;
+      const link = entry.match(/<link rel="alternate" href="([^"]+)"/)?.[1] ?? "";
+      const { caption, label } = splitTitle(title);
       const nr = title.match(/#(\d+)/)?.[1] ?? null;
-      return { id, title, caption, nr };
+      return { id, title, caption: caption || title, nr, label, isShort: link.includes("/shorts/") };
     })
     .filter((v) => v.id);
 }

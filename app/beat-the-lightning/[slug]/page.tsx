@@ -5,7 +5,7 @@ import { btlCategories, getBtlCategory } from "@/lib/btl";
 import { getPlaylistVideos, playlistUrl } from "@/lib/youtube";
 import VideoTile from "@/components/VideoTile";
 import PlayBlock from "@/components/PlayBlock";
-import BtlCategoryNav from "@/components/BtlCategoryNav";
+import CategoryNav from "@/components/CategoryNav";
 
 /**
  * Collection page for one Beat the Lightning category,
@@ -52,7 +52,12 @@ export default async function BtlCollectionPage({ params }: Props) {
         </h1>
 
         {/* The other categories */}
-        <BtlCategoryNav current={category.slug} />
+        <CategoryNav
+          items={btlCategories}
+          basePath="/beat-the-lightning"
+          current={category.slug}
+          label="Challenge categories"
+        />
 
         {/* Videos: read from the YouTube playlist (newest first) */}
         <section className="mt-10">

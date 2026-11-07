@@ -8,10 +8,20 @@ import type { YtVideo } from "@/lib/youtube";
 const PLAY_EVENT = "mm:video-play";
 
 /**
- * A YouTube Short on the site: shows the thumbnail first and only loads
+ * A YouTube video on the site: shows the thumbnail first and only loads
  * the YouTube player when the visitor clicks (keeps the page fast).
+ * Shorts are shown upright (9:16), regular videos landscape (16:9).
+ *
+ * show="number": "#163 An irrational diagonal" (Beat the Lightning)
+ * show="format": format label above the caption (Explore Math)
  */
-export default function VideoTile({ video }: { video: YtVideo }) {
+export default function VideoTile({
+  video,
+  show = "number",
+}: {
+  video: YtVideo;
+  show?: "number" | "format";
+}) {
   const [playing, setPlaying] = useState(false);
 
   // Only one video at a time: stop this one when another one starts
@@ -30,7 +40,11 @@ export default function VideoTile({ video }: { video: YtVideo }) {
 
   return (
     <figure className="flex flex-col">
-      <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[20px] bg-[#1201A4] shadow-[0_14px_30px_rgba(0,0,0,0.3)] ring-1 ring-white/10">
+      <div
+        className={`relative w-full overflow-hidden rounded-[20px] bg-[#1201A4] shadow-[0_14px_30px_rgba(0,0,0,0.3)] ring-1 ring-white/10 ${
+          video.isShort ? "aspect-[9/16]" : "aspect-video"
+        }`}
+      >
         {playing ? (
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&playsinline=1&rel=0`}
@@ -47,10 +61,14 @@ export default function VideoTile({ video }: { video: YtVideo }) {
             className="group absolute inset-0 rounded-[20px] outline-none focus-visible:ring-4 focus-visible:ring-[#19E0F8]"
           >
             <Image
-              src={`https://i.ytimg.com/vi/${video.id}/oar1.jpg`}
+              src={`https://i.ytimg.com/vi/${video.id}/${video.isShort ? "oar1" : "hq720"}.jpg`}
               alt=""
               fill
-              sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 240px"
+              sizes={
+                video.isShort
+                  ? "(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 240px"
+                  : "(max-width: 768px) 90vw, 480px"
+              }
               className="object-cover transition duration-300 group-hover:scale-[1.03]"
             />
             <span className="absolute right-2.5 bottom-2.5 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#1201A4] shadow-lg transition group-hover:scale-110 group-hover:bg-[#19E0F8]">
@@ -61,12 +79,29 @@ export default function VideoTile({ video }: { video: YtVideo }) {
           </button>
         )}
       </div>
-      <figcaption className="mt-2 px-1 text-center text-sm leading-snug text-white/90">
-        {video.nr && (
-          <span className="mr-1.5 font-semibold text-[#19E0F8]">#{video.nr}</span>
-        )}
-        {video.caption}
-      </figcaption>
+      {show === "number" ? (
+        <figcaption className="mt-2 px-1 text-center text-sm leading-snug text-white/90">
+          {video.nr && (
+            <span className="mr-1.5 font-semibold text-[#19E0F8]">#{video.nr}</span>
+          )}
+          {video.caption}
+        </figcaption>
+      ) : (
+        <figcaption
+          className={`mt-2.5 flex flex-col gap-1 px-1 ${video.isShort ? "items-center text-center" : "items-start"}`}
+        >
+          {video.label && (
+            <span className="text-xs font-bold tracking-wide text-[#19E0F8] uppercase">
+              {video.label}
+            </span>
+          )}
+          <span
+            className={`leading-snug text-white ${video.isShort ? "text-sm text-white/90" : "text-base font-semibold md:text-lg"}`}
+          >
+            {video.caption}
+          </span>
+        </figcaption>
+      )}
     </figure>
   );
 }

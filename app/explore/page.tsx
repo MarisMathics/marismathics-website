@@ -1,75 +1,45 @@
 import type { Metadata } from "next";
-import WorldHero from "@/components/WorldHero";
-import Section, { ComingSoon } from "@/components/Section";
-import SocialLinks from "@/components/SocialLinks";
+import ExploreTopicCard from "@/components/ExploreTopicCard";
+import ChannelsBlock from "@/components/ChannelsBlock";
+import { exploreTopics } from "@/lib/explore";
 
 export const metadata: Metadata = {
   title: "Explore Math | MarisMathics",
   description:
-    "Clear explanations of mathematical concepts, with moments that make you smile.",
+    "Discover clear explanations and moments that make you smile, organized by math topic.",
 };
-
-const topics = [
-  { title: "Math concepts", text: "What an idea really means, explained step by step." },
-  { title: "Worked examples", text: "Problems solved clearly, from start to finish." },
-  { title: "Common mistakes", text: "Where it usually goes wrong, and how to avoid it." },
-  { title: "Mathematical reasoning", text: "Why the rules work, not just how to use them." },
-];
-
-const gallery = [
-  "/worlds/explore/01.png",
-  "/worlds/explore/02.png",
-  "/worlds/explore/03.png",
-  "/worlds/explore/04.png",
-  "/worlds/explore/05.png",
-];
 
 export default function ExplorePage() {
   return (
-    <main className="pb-16">
-      <WorldHero
-        title="Explore Math"
-        teaser="Ready to explore math?"
-        background="bg-[radial-gradient(circle_at_30%_40%,#1376FD_10%,#65E7F6_100%)]"
-      >
-        <p>
-          Clear explanations that show why math works, not just how. With a
-          few moments along the way that will make you smile.
+    <main className="bg-[linear-gradient(to_bottom,#1201A4_0%,rgba(18,1,164,0)_16rem),radial-gradient(ellipse_at_50%_35%,#2a8cf0_0%,#1201A4_70%)] pb-20">
+      {/* ===== Hero ===== */}
+      <section className="mx-auto max-w-4xl px-5 pt-8 text-center md:pt-12">
+        <h1 className="text-[2.2rem] leading-tight font-bold text-[#19E0F8] md:text-6xl">
+          Explore Math
+        </h1>
+        <p className="mt-4 text-lg leading-relaxed text-white md:text-2xl">
+          Discover clear explanations
+          <br />
+          and moments that make you smile
         </p>
-      </WorldHero>
+      </section>
 
-      <Section title="What you’ll find here">
-        <ul className="grid gap-4 sm:grid-cols-2">
-          {topics.map((t) => (
-            <li key={t.title} className="rounded-3xl bg-white/10 p-6">
-              <h3 className="text-lg font-semibold text-white">{t.title}</h3>
-              <p className="mt-1 text-white/85">{t.text}</p>
-            </li>
-          ))}
-        </ul>
-        <ComingSoon>
-          Explanations and videos, organised by topic, so you can find exactly
-          what you need.
-        </ComingSoon>
-      </Section>
-
-      <Section title="A taste of MarisMathics">
-        <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-          {gallery.map((src, i) => (
-            <li key={src} className="overflow-hidden rounded-[24px] shadow-xl">
-              <img
-                src={src}
-                alt={`MarisMathics post ${i + 1}`}
-                loading="lazy"
-                className="w-full"
-              />
-            </li>
-          ))}
-        </ul>
-        <div className="mt-6">
-          <SocialLinks />
+      {/* ===== Topics ===== */}
+      <section className="mx-auto mt-10 max-w-5xl px-4 md:mt-12 md:px-8">
+        <div className="rounded-[30px] border border-white/10 bg-white/[0.06] p-5 pt-6 shadow-[0_18px_40px_rgba(0,0,0,0.18)] md:px-10 md:pt-8 md:pb-10">
+          <h2 className="mb-5 text-center text-2xl font-bold text-white md:mb-7 md:text-3xl">
+            Explore by topic
+          </h2>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-4 md:gap-x-8">
+            {exploreTopics.map((t) => (
+              <ExploreTopicCard key={t.slug} topic={t} />
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
+
+      {/* ===== Channels ===== */}
+      <ChannelsBlock title="More math on the channels" />
     </main>
   );
 }
