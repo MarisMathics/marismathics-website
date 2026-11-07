@@ -18,7 +18,7 @@ export default function BtlCategoryCard({ category }: { category: BtlCategory })
         width={540}
         height={960}
         loading="lazy"
-        className="aspect-[9/16] w-full rounded-[20px] object-cover shadow-[0_14px_30px_rgba(0,0,0,0.3)] ring-1 ring-white/10 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_0_36px_rgba(25,224,248,0.55)] group-hover:ring-2 group-hover:ring-[#19E0F8]"
+        className="aspect-[9/16] w-full rounded-[20px] object-cover ring-1 ring-white/10 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_0_36px_rgba(25,224,248,0.55)] group-hover:ring-2 group-hover:ring-[#19E0F8]"
       />
       <h3 className="mt-3 text-center text-[15px] leading-tight font-semibold text-white transition-colors group-hover:text-[#19E0F8] md:text-lg">
         {category.name}

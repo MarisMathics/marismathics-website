@@ -37,7 +37,7 @@ export default async function BtlCollectionPage({ params }: Props) {
   const videos = await getPlaylistVideos(category.playlistId);
 
   return (
-    <main className="bg-[linear-gradient(to_bottom,#1201A4_0%,rgba(18,1,164,0)_12rem),radial-gradient(ellipse_at_50%_25%,#1376FD_0%,#1201A4_65%)] pb-20">
+    <main className="pb-20">
       <div className="mx-auto max-w-5xl px-5 pt-6 md:px-8 md:pt-10">
         {/* Back to the Beat the Lightning page */}
         <Link
