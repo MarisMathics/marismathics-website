@@ -592,7 +592,7 @@ const TIMER_IMG="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKgAAAC/CAYAAABqm
 
 // ---------- Game ----------
 const FORMATS=[
-  {id:"classic",name:"Classic",gen:true},{id:"equations",name:"Equations",gen:true},
+  {id:"classic",name:"Classics",gen:true},{id:"equations",name:"Solve for x",gen:true},
   {id:"geometry",name:"Geometry",gen:false},{id:"bigger",name:"Which is bigger?",gen:true},
   {id:"correct",name:"Which is correct?",gen:false,allInOnly:true},{id:"next",name:"What's next?",gen:true},
 ];
@@ -601,7 +601,7 @@ const $=id=>document.getElementById(id);
 const store={get(k,d){try{const v=localStorage.getItem("btl:"+k);return v==null?d:JSON.parse(v);}catch(e){return d;}},set(k,v){try{localStorage.setItem("btl:"+k,JSON.stringify(v));}catch(e){}}};
 let ROUNDS=ROUNDOPTS.includes(store.get("rounds",10))?store.get("rounds",10):10;
 let level=[1,2,3].includes(store.get("level",1))?store.get("level",1):1;
-let picked=new Set(store.get("picked",[]).filter(id=>id!=="correct")); // empty = All in
+let picked=new Set(store.get("picked",[]).filter(id=>id!=="correct")); // empty = Lightning Mix
 let game=null, timers=[];
 let secs=SECS.includes(store.get("secs",3))?store.get("secs",3):3;
 let classMode=!!store.get("class",false);
@@ -693,7 +693,7 @@ function renderHome(){
   LEVELS.forEach(L=>{const b=document.createElement("button");b.type="button";b.innerHTML=`<span></span><small></small>`;b.querySelector("span").textContent=L.name;b.querySelector("small").textContent=L.sub;b.setAttribute("aria-pressed",L.n===level);b.onclick=()=>{level=L.n;saveHome();};lg.appendChild(b);});
   const box=$("formats"); box.innerHTML="";
   const mix=document.createElement("button"); mix.type="button"; mix.className="fmt mix"; mix.setAttribute("aria-pressed",picked.size===0);
-  mix.innerHTML=`<b class="allin"><svg width="11" height="13" viewBox="0 0 22 26" aria-hidden="true"><path d="M13 0 2 15h7l-2 11L20 9h-7l2-9z" fill="currentColor"/></svg>All in</b>`;
+  mix.innerHTML=`<b class="allin"><svg width="11" height="13" viewBox="0 0 22 26" aria-hidden="true"><path d="M13 0 2 15h7l-2 11L20 9h-7l2-9z" fill="currentColor"/></svg>Lightning Mix</b>`;
   mix.onclick=()=>{picked.clear();saveHome();};
   box.appendChild(mix);
   FORMATS.filter(f=>!f.allInOnly).forEach(f=>{
@@ -955,7 +955,7 @@ function finish(){
   if(mode==="daily"&&!game.already) saveDaily();
   const n=game.beaten, total=game.rounds.length;
   $("finalN").innerHTML=`${n}<small>/${total}</small>`;
-  const ch = picked.size===1 ? FORMATS.find(f=>f.id===[...picked][0]).name : picked.size ? "Mixed" : "All in";
+  const ch = picked.size===1 ? FORMATS.find(f=>f.id===[...picked][0]).name : picked.size ? "Mixed" : "Lightning Mix";
   const fd=$("finalDots"); fd.innerHTML=game.log.map(({win})=>`<svg viewBox="-2 -2 26 30" class="${win?"w":"l"}"><path d="M13 0 2 15h7l-2 11L20 9h-7l2-9z"/></svg>`).join("");
   document.querySelector("#results .answers").open = mode==="class";
   const meta = mode==="daily" ? ["Daily", new Date(game.day+"T12:00").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"}), DAILY_SECS+" s"] : [LEVELS[level-1].name, ch, game.secs+" s"];
@@ -978,6 +978,16 @@ function finish(){
 document.addEventListener("keydown",e=>{ if(!game||$("play").hidden) return;
   if(game.mode==="class"&&(e.key===" "||e.key==="Enter")&&game.cur?.phase==="reveal"){e.preventDefault();reveal();return;}
   if(game.mode==="class"&&game.cur?.phase==="think") return; if(game.cur?.phase==="think"&&(e.key===" "||e.key==="Enter")&&game.cur.it.kind!=="choice"){e.preventDefault();gotIt();} });
+// Deep link from the website, e.g. /lightning?mode=classics opens Your lightning with that challenge type
+const MODE_LINKS={"classics":"classic","solve-for-x":"equations","geometry":"geometry","which-is-bigger":"bigger","whats-next":"next","lightning-mix":""};
+(()=>{ try{
+  const m=new URLSearchParams(location.search).get("mode");
+  if(m!=null && m in MODE_LINKS){
+    const id=MODE_LINKS[m]; picked.clear(); if(id && available(id)) picked.add(id);
+    store.set("picked",[...picked]); show("setup");
+    history.replaceState(null,"",location.pathname);
+  }
+}catch(e){} })();
 renderHome();
 
 </script>
