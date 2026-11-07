@@ -13,6 +13,15 @@ const panel =
 const h2 =
   "text-2xl font-bold text-white [text-shadow:0_1px_8px_rgba(18,1,164,0.35)] md:text-3xl";
 
+/** Small lightning bolt in the brand colors (instead of the yellow emoji) */
+function Bolt() {
+  return (
+    <svg viewBox="0 0 12 20" className="mx-0.5 inline-block h-[1em] w-[0.6em] -translate-y-px align-middle" aria-hidden="true">
+      <path d="M8 0 0 11.5h4.5L3 20l9-12H7.2L8 0z" fill="#1201A4" />
+    </svg>
+  );
+}
+
 export default function MorePage() {
   return (
     <main className="bg-[linear-gradient(to_bottom,#1201A4_0%,rgba(18,1,164,0)_16rem),radial-gradient(ellipse_at_50%_35%,#1376FD_0%,#1201A4_70%)] pb-20">
@@ -44,8 +53,9 @@ export default function MorePage() {
             <h2 className={`${h2} text-center md:text-left`}>Hi, I’m Mariska</h2>
             <div className="mt-4 space-y-4 text-lg leading-8 text-white">
               <p>
-                I’m the “Maris” behind MarisMathics, a math teacher in
-                secondary school in Belgium.
+                I’m the “Maris” behind MarisMathics: a math teacher in
+                secondary school in Belgium who loves turning tricky concepts
+                into clear insights, with a few laughs along the way.
               </p>
               <p>
                 I didn’t start out in a classroom. I studied business
@@ -54,15 +64,21 @@ export default function MorePage() {
                 switched to the classroom. Math became my daily work.
               </p>
               <p>
-                What I enjoy most is the{" "}
-                <span className="font-semibold text-[#1201A4]">aha moment</span>
-                : when a student realizes that math actually makes sense. A
-                calm, step-by-step explanation can make all the difference. I
-                know where students tend to get stuck, so that’s where I start.
+                What I enjoy most are those{" "}
+                <span className="font-semibold whitespace-nowrap text-[#1201A4]">
+                  <Bolt />
+                  aha
+                  <Bolt />
+                </span>{" "}
+                moments, when a student finally understands the logic. A calm,
+                step-by-step explanation can make all the difference. I know
+                where students tend to get stuck, so that’s where I start.
               </p>
               <p>
-                MarisMathics brings that to everyone: clear explanations, a bit
-                of humor and lightning-fast challenges.{" "}
+                At MarisMathics, I bring math to life with clarity and a
+                healthy dose of fun. Whether you love math… or think numbers
+                are confusing, you’ll find clear explanations, surprising
+                insights and lightning-fast challenges.{" "}
                 <span className="font-semibold whitespace-nowrap">
                   Making Math Fun.
                 </span>
