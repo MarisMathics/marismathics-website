@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { btlCategories, getBtlCategory } from "@/lib/btl";
 import { gameLink } from "@/lib/site";
+import { getPlaylistVideos, playlistUrl } from "@/lib/youtube";
+import VideoTile from "@/components/VideoTile";
 
 /**
  * Collection page for one Beat the Lightning category,
@@ -30,6 +32,8 @@ export default async function BtlCollectionPage({ params }: Props) {
   const { slug } = await params;
   const category = getBtlCategory(slug);
   if (!category) notFound();
+
+  const videos = await getPlaylistVideos(category.playlistId);
 
   return (
     <main className="bg-[linear-gradient(to_bottom,#1201A4_0%,rgba(18,1,164,0)_12rem),radial-gradient(ellipse_at_50%_25%,#1376FD_0%,#1201A4_65%)] pb-20">
@@ -79,16 +83,38 @@ export default async function BtlCollectionPage({ params }: Props) {
           </ul>
         </nav>
 
-        {/* Videos: filled from the YouTube playlist once it exists */}
+        {/* Videos: read from the YouTube playlist (newest first) */}
         <section className="mt-10">
-          <div className="flex flex-col items-center gap-3 rounded-[30px] border border-dashed border-cyan-300/50 bg-white/5 px-6 py-14 text-center">
-            <p className="text-xl font-semibold text-white">
-              The {category.name} videos are on their way.
-            </p>
-            <p className="max-w-md text-white/80">
-              In the meantime, you can play the game.
-            </p>
-          </div>
+          {videos.length > 0 ? (
+            <>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-8">
+                {videos.map((v) => (
+                  <li key={v.id}>
+                    <VideoTile video={v} />
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-10 flex justify-center">
+                <a
+                  href={playlistUrl(category.playlistId)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-white/70 px-6 py-2.5 font-semibold text-white transition hover:border-[#19E0F8] hover:text-[#19E0F8]"
+                >
+                  See all {category.name} videos on YouTube
+                </a>
+              </div>
+            </>
+          ) : (
+            <div className="flex flex-col items-center gap-3 rounded-[30px] border border-dashed border-cyan-300/50 bg-white/5 px-6 py-14 text-center">
+              <p className="text-xl font-semibold text-white">
+                The {category.name} videos are on their way.
+              </p>
+              <p className="max-w-md text-white/80">
+                In the meantime, you can play the game.
+              </p>
+            </div>
+          )}
         </section>
       </div>
     </main>
