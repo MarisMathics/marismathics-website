@@ -58,7 +58,7 @@ export default function MorePage() {
                 into clear insights, with a few laughs along the way.
               </p>
               <p>
-                I didn’t start out in a classroom. I studied business
+                I didn’t start out as a teacher. I studied business
                 engineering and spent twelve years coordinating projects in
                 logistics. But my dream was to stand in front of a classroom.
                 So I earned my teaching degree, and in 2019 I made the switch.
