@@ -14,8 +14,9 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-[#0e0186]">
       <div className="mx-auto grid max-w-5xl gap-10 px-5 py-12 text-center md:grid-cols-[1.4fr_1fr_1fr] md:px-8 md:text-left">
         {/* Brand */}
-        <div className="flex flex-col items-center md:items-start">
-          <Link href="/" aria-label="MarisMathics home">
+        <div className="flex justify-center md:justify-start">
+          {/* Logo with the tagline centred below it, as on the homepage */}
+          <Link href="/" aria-label="MarisMathics home" className="inline-flex flex-col items-center">
             <img
               src="/branding/logo_transparant.png"
               alt="MarisMathics"
@@ -23,10 +24,10 @@ export default function Footer() {
               height={220}
               className="w-52"
             />
+            <span className="-mt-1 text-lg tracking-[0.03em] text-cyan-300 italic">
+              Making Math Fun
+            </span>
           </Link>
-          <p className="mt-1 text-lg tracking-[0.03em] text-cyan-300 italic">
-            Making Math Fun
-          </p>
         </div>
 
         {/* The Worlds */}
