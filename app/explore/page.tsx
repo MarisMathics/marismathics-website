@@ -26,7 +26,7 @@ const gallery = [
 
 export default function ExplorePage() {
   return (
-    <main>
+    <main className="pb-16">
       <WorldHero
         title="Explore Math"
         teaser="Ready to explore math?"

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function MorePage() {
   return (
-    <main>
+    <main className="pb-16">
       <WorldHero
         title="More MarisMathics"
         teaser="Want more MarisMathics?"
