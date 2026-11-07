@@ -22,7 +22,14 @@ const libreBaskerville = Libre_Baskerville({
 
 export const metadata: Metadata = {
   title: "MarisMathics",
-  description: "Making Math Fun",
+  description:
+    "Making Math Fun: lightning-fast math challenges, clear explanations and a few laughs along the way.",
+  openGraph: {
+    siteName: "MarisMathics",
+    title: "MarisMathics",
+    description: "Making Math Fun",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

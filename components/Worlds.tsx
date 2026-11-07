@@ -37,7 +37,7 @@ export default function Worlds() {
             <>
               Solve each challenge
               <br />
-              before the lightning strikes.
+              before the lightning strikes
             </>
           }
         />
@@ -59,7 +59,7 @@ export default function Worlds() {
             <>
               Discover clear explanations
               <br />
-              and moments that make you smile.
+              and moments that make you smile
             </>
           }
         />
@@ -76,7 +76,9 @@ export default function Worlds() {
           background="bg-[#1E2FE0]"
           preview={
             <img
-              src="/worlds/more/Mariska.png"
+              src="/worlds/more/mariska-card.jpg"
+              width={540}
+              height={960}
               alt="More MarisMathics"
               className="w-full rounded-[28px]"
             />
@@ -87,7 +89,7 @@ export default function Worlds() {
             <>
               Meet Mariska and explore
               <br />
-              the world behind MarisMathics.
+              the world behind MarisMathics
             </>
           }
         />
