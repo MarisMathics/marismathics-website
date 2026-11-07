@@ -1,0 +1,28 @@
+// ---------- Figures (redrawn from the videos) ----------
+const W="#e8fafd", C="#19e0f8", FILL="rgba(25,224,248,.18)";
+const T=(x,y,t,o={})=>`<text x="${x}" y="${y}" fill="${o.c||W}" font-family="STIX Two Text,Times New Roman,serif" font-size="${o.s||26}" ${o.i?'font-style="italic"':''} text-anchor="${o.a||'middle'}" dominant-baseline="middle">${t}</text>`;
+const FIGS = {
+  rightTri:()=>`<svg viewBox="0 0 300 220"><path d="M70 30 L70 170 L250 170" fill="none" stroke="${W}" stroke-width="4" stroke-linejoin="round"/><path d="M70 30 L250 170" stroke="${C}" stroke-width="6"/><path d="M70 146 h24 v24" fill="none" stroke="${C}" stroke-width="2.5"/>${T(46,100,"3")}${T(160,198,"4")}${T(172,82,"?",{c:W,s:30})}</svg>`,
+  cube:()=>`<svg viewBox="0 0 300 250">${T(150,26,"V = 27 cm³",{i:false})}<g fill="none" stroke="${W}" stroke-width="3.5" stroke-linejoin="round"><path d="M60 90 h130 v130 h-130 z"/><path d="M60 90 l45 -40 h130 l-45 40"/><path d="M235 50 v130 l-45 40"/></g><g stroke="${W}" stroke-width="3" stroke-dasharray="8 7" fill="none"><path d="M105 50 v130 h130"/><path d="M105 180 l-45 40"/></g><path d="M60 220 h130" stroke="${C}" stroke-width="6"/>${T(125,244,"?",{s:30})}</svg>`,
+  circle:()=>`<svg viewBox="0 0 300 250">${T(150,24,"A = 16π cm²")}<circle cx="150" cy="140" r="90" fill="none" stroke="${W}" stroke-width="4"/><path d="M150 140 H240" stroke="${C}" stroke-width="6"/><circle cx="150" cy="140" r="6" fill="${W}"/><circle cx="240" cy="140" r="6" fill="${W}"/>${T(195,112,"?",{s:30})}</svg>`,
+  triAngles:()=>`<svg viewBox="0 0 300 230"><path d="M120 25 L270 190 L30 190 Z" fill="${FILL}" stroke="${C}" stroke-width="4" stroke-linejoin="round"/><circle cx="120" cy="25" r="6" fill="${C}"/><circle cx="270" cy="190" r="6" fill="${C}"/><circle cx="30" cy="190" r="6" fill="${C}"/>${T(127,72,"?",{s:30})}${T(80,170,"77°",{s:24})}${T(222,170,"33°",{s:24})}</svg>`,
+  parallelogram:()=>`<svg viewBox="0 0 300 230">${T(150,24,"A = 60 cm²")}<path d="M90 60 H275 L225 190 H40 Z" fill="none" stroke="${W}" stroke-width="4" stroke-linejoin="round"/><path d="M135 60 V190" stroke="${C}" stroke-width="6"/><path d="M135 172 h18 v18" fill="none" stroke="${W}" stroke-width="2"/>${T(162,122,"?",{s:32})}${T(150,214,"12")}</svg>`,
+  straightAngle:()=>`<svg viewBox="0 0 300 200"><path d="M20 150 H280" stroke="${W}" stroke-width="3" stroke-opacity=".8"/><path d="M150 150 L28 92" stroke="${C}" stroke-width="3.5"/><path d="M150 150 L192 24" stroke="${C}" stroke-width="3.5"/><path d="M110 150 A40 40 0 0 1 190 150 Z" fill="${FILL}"/><path d="M114 133 A40 40 0 0 1 163 112" fill="none" stroke="${C}" stroke-width="2.5"/><circle cx="150" cy="150" r="5" fill="${C}"/>${T(62,135,"27°",{s:24})}${T(230,118,"72°",{s:24})}${T(138,82,"?",{c:C,s:34})}</svg>`,
+  sinCos:()=>`<svg viewBox="0 0 300 220">${T(150,24,"sin²α + cos²α",{s:28})}<path d="M60 60 L60 190 L255 190 Z" fill="none" stroke="${W}" stroke-width="4" stroke-linejoin="round"/><path d="M60 166 h24 v24" fill="none" stroke="${C}" stroke-width="2.5"/><path d="M212 160 A44 44 0 0 1 216 190" fill="none" stroke="${C}" stroke-width="3"/>${T(196,174,"α",{c:C,i:true,s:28})}</svg>`,
+  equilateral:()=>`<svg viewBox="0 0 300 230"><path d="M150 20 L270 200 L30 200 Z" fill="${FILL}" stroke="${C}" stroke-width="4" stroke-linejoin="round"/><circle cx="150" cy="20" r="6" fill="${C}"/><circle cx="270" cy="200" r="6" fill="${C}"/><circle cx="30" cy="200" r="6" fill="${C}"/><g stroke="${W}" stroke-width="2.5"><path d="M85 104 l14 9 M88 99 l14 9"/><path d="M201 113 l14 -9 M198 108 l14 -9"/><path d="M146 193 v14 M154 193 v14"/></g>${T(150,72,"?",{s:30})}${T(78,176,"?",{s:30})}${T(222,176,"?",{s:30})}</svg>`,
+  squareDiag:()=>`<svg viewBox="0 0 300 230"><path d="M80 25 H230 V175 H80 Z" fill="none" stroke="${W}" stroke-width="4"/><path d="M80 25 L230 175" stroke="${C}" stroke-width="6"/><path d="M80 155 h20 v20 M210 25 v20 h20" fill="rgba(232,250,253,.15)" stroke="${W}" stroke-width="2"/>${T(56,100,"1")}${T(155,204,"1")}${T(172,82,"?",{s:30})}</svg>`,
+};
+function graphSVG(f){ // f: "x+1","x-1","x^2","-x^2"
+  const fn={"x+1":x=>x+1,"x-1":x=>x-1,"x^2":x=>x*x,"-x^2":x=>-x*x}[f];
+  const s=26, o=91, px=x=>o+x*s, py=y=>o-y*s;
+  let grid=""; for(let i=-3;i<=3;i++){grid+=`<path d="M${px(i)} ${py(3.4)}V${py(-3.4)}M${px(-3.4)} ${py(i)}H${px(3.4)}" stroke="#c9d6ee" stroke-width="${i===0?1.6:.7}"/>`;}
+  let lab=""; for(let i=-3;i<=3;i++){ if(i) lab+=`<text x="${px(i)}" y="${py(0)+10}" font-size="7" fill="#33407a" text-anchor="middle">${i}</text><text x="${px(0)-6}" y="${py(i)+2.5}" font-size="7" fill="#33407a" text-anchor="end">${i}</text>`; }
+  let d=""; for(let x=-3.4;x<=3.41;x+=0.05){const y=fn(x); if(y>3.6||y<-3.6){continue;} d+=(d?"L":"M")+px(x).toFixed(1)+" "+py(y).toFixed(1);}
+  return `<svg viewBox="0 0 182 182"><rect x="2" y="2" width="178" height="178" rx="8" fill="#e8fafd"/>${grid}${lab}<path d="${d}" fill="none" stroke="#1201a4" stroke-width="2.4"/></svg>`;
+}
+function numberLineSVG(dir){
+  const px=v=>110+v*30;
+  let t=""; for(let v=-3;v<=3;v++) t+=`<path d="M${px(v)} 52v16" stroke="${W}" stroke-width="2"/><text x="${px(v)}" y="88" fill="${W}" font-size="13" font-family="Montserrat,sans-serif" text-anchor="middle">${v}</text>`;
+  const arrow = dir==="left" ? `<path d="M${px(-1)} 60 H14" stroke="${C}" stroke-width="5"/><path d="M6 60 l14 -9 v18z" fill="${C}"/>` : `<path d="M${px(-1)} 60 H206" stroke="${C}" stroke-width="5"/><path d="M214 60 l-14 -9 v18z" fill="${C}"/>`;
+  return `<svg viewBox="0 0 220 100"><path d="M10 60 H210" stroke="${W}" stroke-width="2.5"/>${t}${arrow}<circle cx="${px(-1)}" cy="60" r="7" fill="${C}"/></svg>`;
+}
