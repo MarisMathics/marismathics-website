@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { btlCategories, gameLinkFor, getBtlCategory } from "@/lib/btl";
+import { btlCategories, getBtlCategory } from "@/lib/btl";
+import { gameLink } from "@/lib/site";
 
 /**
  * Collection page for one Beat the Lightning category,
@@ -47,10 +48,10 @@ export default async function BtlCollectionPage({ params }: Props) {
             {category.name}
           </h1>
           <a
-            href={gameLinkFor(category.slug)}
+            href={gameLink}
             className="inline-flex items-center gap-2 self-start rounded-full bg-[#19E0F8] px-6 py-3 font-bold text-[#1201A4] shadow-lg transition hover:scale-105 md:self-auto"
           >
-            ⚡ Play {category.name}
+            ⚡ Play the game
           </a>
         </div>
 
@@ -85,7 +86,7 @@ export default async function BtlCollectionPage({ params }: Props) {
               The {category.name} videos are on their way.
             </p>
             <p className="max-w-md text-white/80">
-              In the meantime, play {category.name} in the game.
+              In the meantime, you can play the game.
             </p>
           </div>
         </section>

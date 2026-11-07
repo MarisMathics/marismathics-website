@@ -52,7 +52,7 @@ export default function BeatTheLightningPage() {
           href={gameLink}
           className="inline-flex items-center gap-2 rounded-full border-2 border-[#19E0F8] px-6 py-2.5 font-bold text-white transition hover:bg-[#19E0F8] hover:text-[#1201A4]"
         >
-          ⚡ Or play the game
+          ⚡ Play the game
         </a>
       </section>
     </main>

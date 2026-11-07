@@ -31,7 +31,3 @@ export function getBtlCategory(slug: string) {
   return btlCategories.find((c) => c.slug === slug);
 }
 
-/** Opens the game with this category already selected */
-export function gameLinkFor(slug: string) {
-  return `/lightning?mode=${slug}`;
-}

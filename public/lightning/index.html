@@ -978,16 +978,6 @@ function finish(){
 document.addEventListener("keydown",e=>{ if(!game||$("play").hidden) return;
   if(game.mode==="class"&&(e.key===" "||e.key==="Enter")&&game.cur?.phase==="reveal"){e.preventDefault();reveal();return;}
   if(game.mode==="class"&&game.cur?.phase==="think") return; if(game.cur?.phase==="think"&&(e.key===" "||e.key==="Enter")&&game.cur.it.kind!=="choice"){e.preventDefault();gotIt();} });
-// Deep link from the website, e.g. /lightning?mode=classics opens Your lightning with that challenge type
-const MODE_LINKS={"classics":"classic","solve-for-x":"equations","geometry":"geometry","which-is-bigger":"bigger","whats-next":"next","lightning-mix":""};
-(()=>{ try{
-  const m=new URLSearchParams(location.search).get("mode");
-  if(m!=null && m in MODE_LINKS){
-    const id=MODE_LINKS[m]; picked.clear(); if(id && available(id)) picked.add(id);
-    store.set("picked",[...picked]); show("setup");
-    history.replaceState(null,"",location.pathname);
-  }
-}catch(e){} })();
 renderHome();
 
 </script>
