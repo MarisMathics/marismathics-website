@@ -46,13 +46,19 @@ export default function MorePage() {
         <div
           className={`${panel} flex flex-col items-center gap-6 p-6 md:flex-row md:items-start md:gap-10 md:p-10`}
         >
-          <img
-            src="/worlds/more/mariska-portrait.jpg"
-            alt="Mariska, the math teacher behind MarisMathics"
-            width={720}
-            height={720}
-            className="w-48 shrink-0 rounded-full ring-4 ring-white/70 md:w-64"
-          />
+          <div className="flex shrink-0 flex-col items-center">
+            <img
+              src="/worlds/more/mariska-portrait.jpg"
+              alt="Mariska, the math teacher behind MarisMathics"
+              width={720}
+              height={720}
+              className="w-48 rounded-full ring-4 ring-white/70 md:w-64"
+            />
+            {/* Slogan under the photo on larger screens */}
+            <p className="mt-6 hidden text-center text-2xl font-bold text-[#19E0F8] italic md:block">
+              Making Math Fun
+            </p>
+          </div>
           <div className="md:text-left">
             <h2 className={`${h2} text-center`}>Hi, I’m Mariska</h2>
             <div className="mt-4 space-y-4 text-lg leading-8 text-white">
@@ -86,7 +92,8 @@ export default function MorePage() {
                 and lightning-fast challenges.
               </p>
             </div>
-            <p className="mt-6 text-center text-xl font-bold text-[#19E0F8] italic md:text-2xl">
+            {/* On phones: slogan at the end of the story */}
+            <p className="mt-6 text-center text-xl font-bold text-[#19E0F8] italic md:hidden">
               Making Math Fun
             </p>
           </div>
