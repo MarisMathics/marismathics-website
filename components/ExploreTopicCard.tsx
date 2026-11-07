@@ -21,7 +21,7 @@ function Symbol({ kind }: { kind: ExploreTopic["symbol"] }) {
     case "powers":
       return (
         <span className={`${serif} text-[32cqw] leading-none`}>
-          √<span className="border-t-[2.5cqw] border-white pl-[1cqw]"><i>x</i><sup className="text-[0.55em]">2</sup></span>
+          √<i>x</i><sup className="text-[0.55em]">2</sup>
         </span>
       );
     case "geometry":
