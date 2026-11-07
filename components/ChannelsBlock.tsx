@@ -10,7 +10,7 @@ export default function ChannelsBlock({
 }) {
   return (
       <section className="mx-auto mt-8 max-w-5xl px-4 md:mt-10 md:px-8">
-        <div className="rounded-[24px] bg-[#0D47D1] px-5 py-7 text-center md:px-10 md:py-9">
+        <div className="rounded-[24px] bg-[#1E2FE0] px-5 py-7 text-center md:px-10 md:py-9">
           <div>
             <h2 className="text-2xl font-bold text-white md:text-3xl">
               {title}
