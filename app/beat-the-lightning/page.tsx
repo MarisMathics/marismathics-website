@@ -45,13 +45,13 @@ export default function BeatTheLightningPage() {
           <a
             href={gameLink}
             tabIndex={-1}
-            className="hidden w-44 shrink-0 overflow-hidden rounded-[22px] shadow-xl transition hover:scale-[1.03] md:block"
+            className="hidden w-64 shrink-0 overflow-hidden rounded-[22px] shadow-xl transition hover:scale-[1.03] md:block"
           >
             <img
               src="/beat-the-lightning/app-home.jpg"
               alt="Home screen of the Beat the Lightning game: Daily lightning and Your lightning"
-              width={480}
-              height={789}
+              width={560}
+              height={579}
               className="block w-full"
             />
           </a>
