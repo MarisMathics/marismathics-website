@@ -5,6 +5,7 @@ import { btlCategories, getBtlCategory } from "@/lib/btl";
 import { getPlaylistVideos, playlistUrl } from "@/lib/youtube";
 import VideoTile from "@/components/VideoTile";
 import PlayBlock from "@/components/PlayBlock";
+import BtlCategoryNav from "@/components/BtlCategoryNav";
 
 /**
  * Collection page for one Beat the Lightning category,
@@ -51,28 +52,7 @@ export default async function BtlCollectionPage({ params }: Props) {
         </h1>
 
         {/* The other categories */}
-        <nav aria-label="Challenge categories" className="mt-6">
-          <ul className="flex flex-wrap gap-2">
-            {btlCategories.map((c) => {
-              const current = c.slug === category.slug;
-              return (
-                <li key={c.slug}>
-                  <Link
-                    href={`/beat-the-lightning/${c.slug}`}
-                    aria-current={current ? "page" : undefined}
-                    className={`block rounded-full border px-4 py-2 text-sm font-semibold transition ${
-                      current
-                        ? "border-white bg-white text-[#1201A4]"
-                        : "border-cyan-300/50 text-white hover:border-white"
-                    }`}
-                  >
-                    {c.name}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+        <BtlCategoryNav current={category.slug} />
 
         {/* Videos: read from the YouTube playlist (newest first) */}
         <section className="mt-10">
