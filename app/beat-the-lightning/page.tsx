@@ -18,11 +18,8 @@ export default function BeatTheLightningPage() {
         <h1 className="text-[2rem] leading-tight font-bold text-[#19E0F8] md:text-5xl lg:text-6xl">
           Welcome to the
           <br />
-          <span className="whitespace-nowrap">Beat the Lightning</span> Universe
+          <span className="md:whitespace-nowrap">BEAT THE LIGHTNING</span> Universe
         </h1>
-        <p className="mt-4 text-xl font-semibold text-white md:text-3xl">
-          Can you beat the lightning?
-        </p>
       </section>
 
       {/* ===== Play: the game ===== */}
@@ -30,7 +27,7 @@ export default function BeatTheLightningPage() {
         <div className="flex items-center gap-8 rounded-[30px] bg-[radial-gradient(circle_at_30%_50%,#19E0F8_0%,#1376FD_70%)] p-6 shadow-[0_18px_40px_rgba(0,0,0,0.25)] md:px-10 md:py-7">
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-2xl font-bold text-white md:text-3xl">
-              Play Beat the Lightning
+              Can you beat the lightning?
             </h2>
             <p className="mt-2 text-base leading-7 text-white/95 md:text-lg">
               A new Daily lightning every day, or set up your own.
