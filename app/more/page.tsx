@@ -59,10 +59,10 @@ export default function MorePage() {
               </p>
               <p>
                 I didn’t start out as a teacher. I studied business
-                engineering and spent twelve years coordinating projects in
+                engineering and spent twelve years managing projects in
                 logistics. But my dream was to stand in front of a classroom.
                 So I earned my teaching degree, and in 2019 I made the switch.
-                Math became my daily work, and I love it.
+                Teaching math became my daily work, and I love it.
               </p>
               <p>
                 What I enjoy most are those{" "}
