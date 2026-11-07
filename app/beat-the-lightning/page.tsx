@@ -18,6 +18,11 @@ export default function BeatTheLightningPage() {
         <h1 className="text-[2.2rem] leading-tight font-bold text-[#19E0F8] md:text-6xl">
           BEAT THE LIGHTNING
         </h1>
+        <p className="mt-4 text-lg leading-relaxed text-white md:text-2xl">
+          Solve each challenge
+          <br />
+          before the lightning strikes
+        </p>
       </section>
 
       {/* ===== Play: the game ===== */}
