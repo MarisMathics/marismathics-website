@@ -55,7 +55,7 @@ export default function MorePage() {
               className="w-48 rounded-full ring-4 ring-white/70 md:w-64"
             />
             {/* Slogan under the photo on larger screens */}
-            <p className="mt-6 hidden text-center text-2xl font-bold text-[#19E0F8] italic md:block">
+            <p className="mt-6 hidden text-center text-2xl text-[#19E0F8] italic md:block">
               Making Math Fun
             </p>
           </div>
@@ -93,7 +93,7 @@ export default function MorePage() {
               </p>
             </div>
             {/* On phones: slogan at the end of the story */}
-            <p className="mt-6 text-center text-xl font-bold text-[#19E0F8] italic md:hidden">
+            <p className="mt-6 text-center text-xl text-[#19E0F8] italic md:hidden">
               Making Math Fun
             </p>
           </div>
