@@ -16,7 +16,7 @@ export default function ChannelsBlock({
               {title}
             </h2>
             <p className="mt-2 text-white/85">
-              A new MarisMathics video every other day.
+              A new MarisMathics video every other day
             </p>
           </div>
           <div className="mt-5">
