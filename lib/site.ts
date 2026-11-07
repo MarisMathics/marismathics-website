@@ -27,3 +27,6 @@ export const worldLinks = {
   explore: "/explore",
   more: "/more",
 } as const;
+
+/** The Beat The Lightning game (self-contained page in public/lightning) */
+export const gameLink = "/lightning";

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import WorldHero from "@/components/WorldHero";
-import Section, { ComingSoon } from "@/components/Section";
+import Section from "@/components/Section";
 import SocialLinks from "@/components/SocialLinks";
+import { gameLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Beat The Lightning | MarisMathics",
@@ -43,6 +44,12 @@ export default function BeatTheLightningPage() {
           Short, fast-paced math challenges. One problem, one countdown, and
           just a few seconds to find the answer before the lightning strikes.
         </p>
+        <a
+          href={gameLink}
+          className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#1201A4] px-7 py-3 text-lg font-bold tracking-wide text-white shadow-lg transition hover:scale-105 hover:shadow-[0_0_30px_rgba(18,1,164,0.55)]"
+        >
+          ⚡ Play the game
+        </a>
       </WorldHero>
 
       <Section title="How it works">
@@ -68,10 +75,18 @@ export default function BeatTheLightningPage() {
             </li>
           ))}
         </ul>
-        <ComingSoon>
-          Play Beat The Lightning challenges right here on the website, with a
-          timer and answer reveal.
-        </ComingSoon>
+        <div className="mt-6 flex flex-col items-start gap-4 rounded-3xl border border-cyan-300/50 bg-white/5 p-5 text-white/90 md:flex-row md:items-center md:justify-between">
+          <p className="leading-7">
+            Play all these challenge types in the game: a new Daily lightning
+            every day, or set up your own.
+          </p>
+          <a
+            href={gameLink}
+            className="shrink-0 rounded-full bg-[#19E0F8] px-6 py-2.5 font-bold text-[#1201A4] transition hover:scale-105"
+          >
+            Play now
+          </a>
+        </div>
       </Section>
 
       <Section title="New challenges every day">
