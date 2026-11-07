@@ -30,3 +30,6 @@ export const worldLinks = {
 
 /** The Beat The Lightning game (self-contained page in public/lightning) */
 export const gameLink = "/lightning";
+
+/** Contact address (forwards to Mariska) */
+export const contactEmail = "mariska@marismathics.com";
