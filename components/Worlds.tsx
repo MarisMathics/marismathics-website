@@ -31,14 +31,12 @@ export default function Worlds() {
             </video>
           }
           href={worldLinks.btl}
-          goLabel="Enter BEAT THE LIGHTNING"
-          teaser="Can you beat the lightning?⚡"
+          cta="Can you beat the lightning?"
           description={
             <>
               Solve each challenge
               <br />
               before the lightning strikes.
-              <br />
             </>
           }
         />
@@ -55,8 +53,7 @@ export default function Worlds() {
           background="bg-[radial-gradient(circle_at_center,#1376FD_18%,#65E7F6_100%)]"
           preview={<ExploreCarousel />}
           href={worldLinks.explore}
-          goLabel="Enter Explore Math"
-          teaser="Ready to explore math?⚡"
+          cta="Ready to explore math?"
           description={
             <>
               Discover clear explanations
@@ -84,8 +81,7 @@ export default function Worlds() {
             />
           }
           href={worldLinks.more}
-          goLabel="Enter More MarisMathics"
-          teaser="Want more MarisMathics? ⚡"
+          cta="Want more MarisMathics?"
           description={
             <>
               Meet Mariska and explore
