@@ -26,7 +26,7 @@ export type BtlCategory = {
 export const btlCategories: BtlCategory[] = [
   { slug: "classics", name: "Classics", image: "/beat-the-lightning/cards/classics.jpg", imageAlt: "Beat the Lightning #143: 12² ÷ 6 × 2", playlistId: "" },
   { slug: "solve-for-x", name: "Solve for x", image: "/beat-the-lightning/cards/solve-for-x.jpg", imageAlt: "Beat the Lightning #118: 3x + 6x = 36", playlistId: "" },
-  { slug: "geometry", name: "Geometry", image: "/beat-the-lightning/cards/geometry.jpg", imageAlt: "Beat the Lightning #63: right triangle with sides 3 and 4", playlistId: "" },
+  { slug: "geometry", name: "Geometry", image: "/beat-the-lightning/cards/geometry.jpg", imageAlt: "Beat the Lightning #150: equilateral triangle, find the angles", playlistId: "" },
   { slug: "which-is-bigger", name: "Which is bigger?", image: "/beat-the-lightning/cards/which-is-bigger.jpg", imageAlt: "Beat the Lightning #166: which is bigger, 2⁵ or 5²?", playlistId: "" },
   { slug: "whats-next", name: "What’s next?", image: "/beat-the-lightning/cards/whats-next.jpg", imageAlt: "Beat the Lightning #114: 1, 3, 6, ?, 15", playlistId: "" },
   { slug: "lightning-mix", name: "Lightning Mix", image: "/beat-the-lightning/cards/lightning-mix.jpg", imageAlt: "Beat the Lightning #142: which is correct, x ≥ −1?", playlistId: "" },
