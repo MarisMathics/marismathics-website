@@ -61,7 +61,7 @@ export default function VideoTile({
             className="group absolute inset-0 rounded-[20px] outline-none focus-visible:ring-4 focus-visible:ring-[#19E0F8]"
           >
             <Image
-              src={`https://i.ytimg.com/vi/${video.id}/${video.isShort ? "oar1" : "hq720"}.jpg`}
+              src={`https://i.ytimg.com/vi/${video.id}/${video.isShort ? "oardefault" : "hq720"}.jpg`}
               alt=""
               fill
               sizes={
