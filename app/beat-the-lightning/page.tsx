@@ -29,9 +29,6 @@ export default function BeatTheLightningPage() {
             <h2 className="text-2xl font-bold text-white md:text-3xl">
               Can you beat the lightning?
             </h2>
-            <p className="mt-2 text-base leading-7 text-white/95 md:text-lg">
-              A new Daily lightning every day, or set up your own.
-            </p>
             <a
               href={gameLink}
               className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#1201A4] px-8 py-3.5 text-lg font-bold text-white shadow-lg transition hover:scale-105 hover:shadow-[0_0_30px_rgba(18,1,164,0.55)]"
