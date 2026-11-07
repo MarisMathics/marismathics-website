@@ -77,8 +77,7 @@ export default function Worlds() {
 
           <div className="mt-2 flex flex-col items-center">
 
-            <a
-              href="/lightning"
+            <button
               className="
                 group
                 transition-all
@@ -88,7 +87,7 @@ export default function Worlds() {
             >
               <img
                 src="/branding/compass-enter.svg"
-                alt="Play BEAT THE LIGHTNING"
+                alt="Enter BEAT THE LIGHTNING"
                 className="
                   h-14
                   w-14
@@ -97,7 +96,7 @@ export default function Worlds() {
                   group-hover:drop-shadow-[0_0_22px_rgba(24,224,248,0.9)]
                 "
               />
-            </a>
+            </button>
 
             <span className="mt-1 text-base font-bold tracking-wide text-[#1201A4]">
               GO
