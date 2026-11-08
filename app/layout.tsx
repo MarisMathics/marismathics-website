@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Libre_Baskerville } from "next/font/google";
+import Script from "next/script";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -47,6 +48,12 @@ export default function RootLayout({
         <Navigation />
         <div className="flex-1">{children}</div>
         <Footer />
+        {/* Cloudflare Web Analytics: anonymous visitor counts, no cookies */}
+        <Script
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "5feb5e2483194600b5239811dc3f4c8d"}'
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

@@ -19,15 +19,34 @@ export default function PrivacyPage() {
         <p className="mt-4 text-lg leading-8 text-white/90">
           MarisMathics is made by Mariska, a math teacher in Belgium. This site
           is built to be used without giving away anything about yourself. In
-          short: no tracking, no ads, no accounts.
+          short: no cookies, no ads, no accounts, and you never have to fill in
+          any personal information.
         </p>
 
         <div className="space-y-4 text-base leading-7 text-white/90 md:text-lg md:leading-8">
-          <h2 className={h2}>No tracking cookies</h2>
+          <h2 className={h2}>No cookies</h2>
           <p>
-            This website does not use cookies for statistics, advertising or
-            tracking. There is no analytics tool and no social media pixel.
-            That is why you don’t see a cookie banner.
+            This website does not place cookies and has no advertising or
+            social media pixels. That is why you don’t see a cookie banner.
+            (YouTube may set its own cookies once you play a video, see below.)
+          </p>
+
+          <h2 className={h2}>Visitor statistics</h2>
+          <p>
+            To see how many people visit the site and which pages they like,
+            MarisMathics uses{" "}
+            <a
+              href="https://www.cloudflare.com/web-analytics/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={link}
+            >
+              Cloudflare Web Analytics
+            </a>
+            . It counts visits anonymously: it uses no cookies, does not
+            follow you across websites and does not build a profile of you.
+            MarisMathics only sees totals, such as the number of visits per
+            page, the type of device and the country.
           </p>
 
           <h2 className={h2}>The Beat the Lightning game</h2>
@@ -58,9 +77,12 @@ export default function PrivacyPage() {
 
           <h2 className={h2}>Hosting</h2>
           <p>
-            This website is hosted by Vercel. Like every web server, it
-            processes technical data such as your IP address to deliver the
-            pages to your browser and to keep the site secure.
+            This website is hosted by Vercel and its domain name is managed by
+            Cloudflare. Like every web service, they process technical data
+            such as your IP address to deliver the pages to your browser and
+            to keep the site secure. These companies may process this data
+            outside the European Union, under the safeguards required by
+            European privacy law.
           </p>
 
           <h2 className={h2}>Email</h2>
@@ -70,7 +92,9 @@ export default function PrivacyPage() {
               {contactEmail}
             </a>
             , your message and email address are only used to reply to you.
-            They are never shared or used for marketing.
+            They are never shared or used for marketing, and are not kept
+            longer than needed. Emails to this address are forwarded through
+            Cloudflare.
           </p>
 
           <h2 className={h2}>Your rights</h2>

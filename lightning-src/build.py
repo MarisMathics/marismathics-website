@@ -25,7 +25,7 @@ head='''<!doctype html>
 <meta property="og:image" content="/lightning/icon-512.png">
 <style>*,*::before,*::after{box-sizing:border-box}[hidden]{display:none!important}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);background:#07006a}</style>
 '''
-html=head+h+'\n</head>\n<body>\n'+b+"<script>\n"+"\n".join(parts)+"\n</script>\n</body>\n</html>\n"
+html=head+h+'\n</head>\n<body>\n'+b+"<script>\n"+"\n".join(parts)+"\n</script>\n<!-- Cloudflare Web Analytics: anonymous visitor counts, no cookies -->\n<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"5feb5e2483194600b5239811dc3f4c8d\"}'></script>\n</body>\n</html>\n"
 open(OUT+'index.html','w',encoding='utf-8').write(html)
 json.dump({"name":"Beat The Lightning – MarisMathics","short_name":"Lightning","description":"Solve each math challenge before the lightning strikes.",
  "start_url":"/lightning","scope":"/lightning","display":"standalone","orientation":"portrait","background_color":"#07006a","theme_color":"#1201a4",
