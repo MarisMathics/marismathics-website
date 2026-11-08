@@ -2,7 +2,10 @@
  * Reads a public YouTube playlist through YouTube's own feed
  * (no API key needed). The feed lists the newest 15 videos.
  * The site checks for new videos every 6 hours.
+ * If the feed is down, a saved copy of the playlists is shown instead.
  */
+
+import snapshot from "./youtube-snapshot.json";
 
 export type YtVideo = {
   id: string;
@@ -58,11 +61,30 @@ export async function getPlaylistVideos(playlistId: string): Promise<YtVideo[]> 
       `https://www.youtube.com/feeds/videos.xml?playlist_id=${playlistId}`,
       { next: { revalidate: REVALIDATE_SECONDS } },
     );
-    if (!res.ok) return [];
-    return parseFeed(await res.text());
+    if (res.ok) {
+      const videos = parseFeed(await res.text());
+      if (videos.length > 0) return videos;
+    }
   } catch {
-    return [];
+    // YouTube's feed is unreachable: fall through to the saved copy
   }
+  return snapshotVideos(playlistId);
+}
+
+/**
+ * Saved copy of the playlists (lib/youtube-snapshot.json), used when
+ * YouTube's feed is down so the pages never show up empty.
+ * Format per playlist: [videoId, title, isShort].
+ */
+function snapshotVideos(playlistId: string): YtVideo[] {
+  const rows = (snapshot as unknown as Record<string, [string, string, boolean][]>)[playlistId] ?? [];
+  return rows.map(([id, title, isShort]) => toVideo(id, title, isShort));
+}
+
+function toVideo(id: string, title: string, isShort: boolean): YtVideo {
+  const { caption, label } = splitTitle(title);
+  const nr = title.match(/#(\d+)/)?.[1] ?? null;
+  return { id, title, caption: caption || title, nr, label, isShort };
 }
 
 function decode(s: string) {
@@ -82,9 +104,7 @@ export function parseFeed(xml: string): YtVideo[] {
       const id = entry.match(/<yt:videoId>([^<]+)<\/yt:videoId>/)?.[1] ?? "";
       const title = decode(entry.match(/<title>([^<]*)<\/title>/)?.[1] ?? "").trim();
       const link = entry.match(/<link rel="alternate" href="([^"]+)"/)?.[1] ?? "";
-      const { caption, label } = splitTitle(title);
-      const nr = title.match(/#(\d+)/)?.[1] ?? null;
-      return { id, title, caption: caption || title, nr, label, isShort: link.includes("/shorts/") };
+      return toVideo(id, title, link.includes("/shorts/"));
     })
     .filter((v) => v.id);
 }
