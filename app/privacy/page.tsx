@@ -17,7 +17,8 @@ export default function PrivacyPage() {
           Privacy
         </h1>
         <p className="mt-4 text-lg leading-8 text-white/90">
-          MarisMathics is made by Mariska, a math teacher in Belgium. This site
+          MarisMathics is made by Mariska Cornette, a math teacher in Belgium,
+          who is responsible for this website. This site
           is built to be used without giving away anything about yourself. In
           short: no cookies, no ads, no accounts, and you never have to fill in
           any personal information.
